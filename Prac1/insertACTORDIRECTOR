@@ -1,0 +1,50 @@
+import pymysql.cursors
+
+# Conectarse a la base de datos
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+
+# Consulta SQL para obtener las personas que aparecen como actor y director en la misma película
+consulta_personas_actor_director = """
+    SELECT id_persona, id_contingutCinematografic
+    FROM contingutcinematografic_persones
+    WHERE id_rols IN (0, 1)  -- Roles de ACTOR y DIRECTOR
+    GROUP BY id_persona, id_contingutCinematografic
+    HAVING COUNT(DISTINCT id_rols) > 1
+"""
+
+# Consulta SQL para actualizar el rol de ACTOR/DIRECTOR
+consulta_actualizar_rol = """
+INSERT INTO contingutcinematografic_persones (id_persona, id_contingutCinematografic, id_rols, name_character) VALUES (%s,%s,%s,%s)
+"""
+
+try:
+    # Ejecutar la consulta para obtener las personas que son actor y director en la misma película
+    cursor.execute(consulta_personas_actor_director)
+    personas_actor_director = cursor.fetchall()
+
+    # Actualizar el rol de ACTOR/DIRECTOR para las personas encontradas
+    for persona in personas_actor_director:
+        id_persona = persona['id_persona']
+        id_pelicula = persona['id_contingutCinematografic']
+        cursor.execute(consulta_actualizar_rol, (id_persona, id_pelicula,str(2), str("")))
+
+    # Confirmar los cambios en la base de datos
+    connection.commit()
+    
+
+except pymysql.Error as e:
+    # Manejar cualquier error de la base de datos
+    print("Error al ejecutar la consulta:", e)
+
+finally:
+    # Cerrar el cursor y la conexión
+    cursor.close()
+    connection.close()
+    print("Se han actualizado los roles de ACTOR/DIRECTOR correctamente.")
