@@ -1,0 +1,86 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+cursor = connection.cursor()
+
+# Consulta SQL para contar la cantidad de contenido con diferencia de puntajes
+consulta_diferencia_puntajes = """
+    SELECT 
+        COUNT(*) AS cantidad_contenido,
+        SUM(CASE WHEN ABS(score_imbd - score_tmbd) >= 1.0 THEN 1 ELSE 0 END) AS diferencia_mayor_igual_1_0,
+        SUM(CASE WHEN ABS(score_imbd - score_tmbd) < 1.0 THEN 1 ELSE 0 END) AS diferencia_menor_1_0
+    FROM (
+        SELECT 
+            c.id_contingut_cinematografic,
+            ABS(imbd.score_imbd - tmbd.score_tmbd) AS diferencia_puntajes,
+            imbd.score_imbd,
+            tmbd.score_tmbd
+        FROM 
+            contingut_cinematografic c
+            JOIN imbd ON c.id_imbd = imbd.idimbd
+            JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+    ) AS subconsulta;
+"""
+
+# Ejecutar la consulta
+cursor.execute(consulta_diferencia_puntajes)
+resultado_diferencia_puntajes = cursor.fetchone()
+
+# Imprimir los resultados en catalán
+if resultado_diferencia_puntajes:
+    cantidad_contenido = resultado_diferencia_puntajes['cantidad_contenido']
+    diferencia_mayor_igual_1_5 = resultado_diferencia_puntajes['diferencia_mayor_igual_1_0']
+    diferencia_menor_1_5 = resultado_diferencia_puntajes['diferencia_menor_1_0']
+    print("Informació sobre la diferència de puntuacions:")
+    print(f"Quantitat de contingut total: {cantidad_contenido}")
+    print(f"Quantitat de contingut amb diferència de puntuacions major o igual a 1.0: {diferencia_mayor_igual_1_5}")
+    print(f"Quantitat de contingut amb diferència de puntuacions menor a 1.0: {diferencia_menor_1_5}")
+else:
+    print("No s'han trobat resultats.")
+
+connection.close()
+
+#part grafica:
+
+categorias = ['Diferencia >= 1.0', 'Diferencia < 1.0']
+valores = [float(diferencia_mayor_igual_1_5), float(diferencia_menor_1_5)]
+
+# Configuración de barras
+ancho_barra = 0.35
+indice = np.arange(len(categorias))
+
+
+fig, ax = plt.subplots()
+
+
+barra1 = ax.bar(indice, [cantidad_contenido], ancho_barra, label='Quantitat total de contingut')
+
+
+barra2 = ax.bar(indice + ancho_barra, valores, ancho_barra, label='Diferencia de puntuació')
+
+for i, v in enumerate(valores):
+    ax.text(i + ancho_barra / 2 + 0.2, v + 0.1, str(v), ha='center', va='bottom')
+
+ax.text(0, cantidad_contenido + 0.1, str(cantidad_contenido), ha='center', va='bottom')
+
+
+ax.set_xlabel('Puntuació')
+ax.set_ylabel('Quantitat')
+ax.set_title('Diferencia de puntuació')
+ax.set_xticks(indice + ancho_barra / 2)
+ax.set_xticklabels(categorias)
+ax.legend()
+
+# Mostrar gráfico
+plt.savefig("graficConsulta14.png")
+plt.show()

@@ -1,0 +1,143 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+consulta_valoracion_promedio_imdb = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            ROUND(AVG(imbd.score_imbd), 3) AS valoracion_promedio_imdb
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN imbd ON c.id_imbd = imbd.idimbd
+        WHERE 
+            c.type_contingut_cinematografic = '0'
+        GROUP BY 
+            p.name_plataforma;
+    """
+cursor.execute(consulta_valoracion_promedio_imdb)
+resultado_imdb = cursor.fetchall()
+
+consulta_valoracion_promedio_tmbd = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            ROUND(AVG(tmbd.score_tmbd), 3) AS valoracion_promedio_tmbd
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+        WHERE 
+            c.type_contingut_cinematografic = '0'
+        GROUP BY 
+            p.name_plataforma;
+    """
+cursor.execute(consulta_valoracion_promedio_tmbd)
+resultado_tmbd = cursor.fetchall()
+resultado = cursor.fetchall()
+
+info = []
+
+if resultado_imdb and resultado_tmbd:
+    print("Valoración promedio de películas por plataforma (IMDB y TMBD):")
+    for fila_imdb, fila_tmbd in zip(resultado_imdb, resultado_tmbd):
+        plataforma = fila_imdb['plataforma']
+        valoracion_promedio_imdb = fila_imdb['valoracion_promedio_imdb']
+        valoracion_promedio_tmbd = fila_tmbd['valoracion_promedio_tmbd']
+        print(f"Plataforma: {plataforma}, Valoración Promedio (IMDB): {valoracion_promedio_imdb}, Valoración Promedio (TMBD): {valoracion_promedio_tmbd}")
+        info.append({'Plataforma': plataforma, 'Valoracio': valoracion_promedio_imdb, 'Tipo': 'imbd'})
+        info.append({'Plataforma': plataforma, 'Valoracio': valoracion_promedio_tmbd, 'Tipo': 'tmbd'})
+else:
+    print("No se encontraron resultados para películas.")
+
+dades = pd.DataFrame(info)
+
+g = sns.catplot(data=dades, kind='bar', x='Plataforma', y='Valoracio', hue='Tipo', height=3, aspect=3, legend_out=False)
+g.despine(left=True)
+
+plt.title('Valoracions mitjes pel·lícules IMBD i TMBD per plataforma')
+plt.xlabel('Plataforma')
+plt.ylabel('Valoració mitja')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.legend(loc='upper center', bbox_to_anchor=(0.8, -0.6), shadow=True, ncol=2)
+plt.savefig("graficConsulta8.png")
+plt.show()
+
+info.clear()
+consulta_valoracion_promedio_imdb_series = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            ROUND(AVG(imbd.score_imbd), 3) AS valoracion_promedio_imdb
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN imbd ON c.id_imbd = imbd.idimbd
+        WHERE 
+            c.type_contingut_cinematografic = '1'
+        GROUP BY 
+            p.name_plataforma;
+    """
+cursor.execute(consulta_valoracion_promedio_imdb_series)
+resultado_imdb = cursor.fetchall()
+
+consulta_valoracion_promedio_tmbd_series = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            ROUND(AVG(tmbd.score_tmbd), 3) AS valoracion_promedio_tmbd
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+        WHERE 
+            c.type_contingut_cinematografic = '1'
+        GROUP BY 
+            p.name_plataforma;
+    """
+cursor.execute(consulta_valoracion_promedio_tmbd_series)
+resultado_tmbd = cursor.fetchall()
+resultado = cursor.fetchall()
+
+
+cursor.close()
+connection.close()
+
+if resultado_imdb and resultado_tmbd:
+    print("Valoración promedio de series por plataforma (IMDB y TMBD):")
+    for fila_imdb, fila_tmbd in zip(resultado_imdb, resultado_tmbd):
+        plataforma = fila_imdb['plataforma']
+        valoracion_promedio_imdb = fila_imdb['valoracion_promedio_imdb']
+        valoracion_promedio_tmbd = fila_tmbd['valoracion_promedio_tmbd']
+        print(f"Plataforma: {plataforma}, Valoración Promedio (IMDB): {valoracion_promedio_imdb}, Valoración Promedio (TMBD): {valoracion_promedio_tmbd}")
+
+        info.append({'Plataforma': plataforma, 'Valoracio': valoracion_promedio_imdb, 'Tipo': 'imbd'})
+        info.append({'Plataforma': plataforma, 'Valoracio': valoracion_promedio_tmbd, 'Tipo': 'tmbd'})
+else:
+    print("No se encontraron resultados para películas.")
+
+#part del grafic
+dades = pd.DataFrame(info)
+
+g = sns.catplot(data=dades, kind='bar', x='Plataforma', y='Valoracio', hue='Tipo', height=3, aspect=3, legend_out=False)
+g.despine(left=True)
+
+plt.title('Valoracions mitjes series IMBD i TMBD per plataforma')
+plt.xlabel('Plataforma')
+plt.ylabel('Valoració mitja')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.legend(loc='upper center', bbox_to_anchor=(0.8, -0.6), shadow=True, ncol=2)
+plt.savefig("graficConsulta8.png")
+plt.show()

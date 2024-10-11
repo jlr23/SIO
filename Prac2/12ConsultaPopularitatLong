@@ -1,0 +1,70 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+connection = pymysql.connect(
+host='localhost',
+user='root',
+password='',
+database='sio_1',
+cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+
+# Consulta SQL para calcular la media de la popularidad, puntaje TMBD y puntaje IMBD para cada intervalo de duración de 10 minutos
+consulta_series_intervalos = """
+    SELECT 
+        FLOOR(c.runtime_contingut_cinematografic / 10) * 10 AS intervalo_duración,
+        AVG(tmbd.popularity_tmbd) AS popularidad_media_tmbd,
+        AVG(tmbd.score_tmbd) AS puntaje_tmbd_medio,
+        AVG(imbd.score_imbd) AS puntaje_imbd_medio
+    FROM 
+        contingut_cinematografic c
+        JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+        JOIN imbd ON c.id_imbd = imbd.idimbd
+    WHERE 
+        c.type_contingut_cinematografic = '1'  -- Filtrar solo las series
+    GROUP BY 
+        FLOOR(c.runtime_contingut_cinematografic / 10) * 10
+
+    ORDER BY 
+        intervalo_duración ASC;  -- Ordenar por intervalo de duración ascendente
+"""
+
+# Ejecutar la consulta
+cursor.execute(consulta_series_intervalos)
+series_intervalos = cursor.fetchall()
+
+info = []
+
+# Imprimir los resultados
+if series_intervalos:
+    print("Media de popularidad, puntaje TMBD y puntaje IMBD por intervalo de duración de 10 minutos:")
+    for fila in series_intervalos:
+        intervalo_duración = fila['intervalo_duración']
+        popularidad_media_tmbd = fila['popularidad_media_tmbd']
+        puntaje_tmbd_medio = fila['puntaje_tmbd_medio']
+        puntaje_imbd_medio = fila['puntaje_imbd_medio']
+        print(f"Intervalo de Duración: {intervalo_duración} - {intervalo_duración + 10} minutos")
+        print(f"Media de Popularidad TMBD: {popularidad_media_tmbd}")
+        print(f"Puntaje TMBD Medio: {puntaje_tmbd_medio}")
+        print(f"Puntaje IMBD Medio: {puntaje_imbd_medio}")
+        print("-----------------------------------------")
+        info.append({"durada": intervalo_duración, "p": popularidad_media_tmbd, "tipo": "mitja popularitat TMBD"})
+        info.append({"durada": intervalo_duración, "p": puntaje_imbd_medio, "tipo": "puntuació mitja IMBD"})
+        info.append({"durada": intervalo_duración, "p": puntaje_tmbd_medio, "tipo": "puntuació mitja TMBD"})
+
+else:
+    print("No se encontraron resultados.")
+
+connection.close()
+
+#part grafica
+
+dades = pd.DataFrame(info)
+sns.lmplot(data=dades, x="durada", y="p", hue="tipo", height=5)
+plt.xlabel("Duració en minuts")
+plt.ylabel("Puntuació")
+plt.savefig("graficConsulta12.png")
+plt.show()

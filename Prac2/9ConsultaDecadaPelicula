@@ -1,0 +1,142 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+infoi = []
+infot = []
+
+cursor = connection.cursor()
+consulta_valoracion_promedio_imdb = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            FLOOR(c.release_year_contingut_cinematografic / 10) * 10 AS intervalo_anio,
+            ROUND(AVG(imbd.score_imbd), 3) AS valoracion_promedio_imdb
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN imbd ON c.id_imbd = imbd.idimbd
+        WHERE 
+            c.type_contingut_cinematografic = '0'
+        GROUP BY 
+            p.name_plataforma, intervalo_anio
+        ORDER BY 
+            intervalo_anio;
+    """
+cursor.execute(consulta_valoracion_promedio_imdb)
+resultado_imdb = cursor.fetchall()
+
+consulta_valoracion_promedio_tmbd = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            FLOOR(c.release_year_contingut_cinematografic / 10) * 10 AS intervalo_anio,
+            ROUND(AVG(tmbd.score_tmbd), 3) AS valoracion_promedio_tmbd
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+        WHERE 
+            c.type_contingut_cinematografic = '0'
+        GROUP BY 
+            p.name_plataforma, intervalo_anio
+        ORDER BY 
+            intervalo_anio;
+    """
+cursor.execute(consulta_valoracion_promedio_tmbd)
+resultado_tmbd = cursor.fetchall()
+resultado = cursor.fetchall()
+
+
+if resultado_imdb and resultado_tmbd:
+    print("Valoración promedio de películas por plataforma (IMDB y TMBD):")
+    for fila_imdb, fila_tmbd in zip(resultado_imdb, resultado_tmbd):
+        plataforma = fila_imdb['plataforma']
+        ano = fila_imdb['intervalo_anio']
+        valoracion_promedio_imdb = fila_imdb['valoracion_promedio_imdb']
+        valoracion_promedio_tmbd = fila_tmbd['valoracion_promedio_tmbd']
+        #print(f"Año: {ano}, Plataforma: {plataforma}, Valoración Promedio (IMDB): {valoracion_promedio_imdb}, Valoración Promedio (TMBD): {valoracion_promedio_tmbd}")
+        infoi.append({'plataforma': plataforma, 'any': ano, 'valoracio': valoracion_promedio_imdb, "tipus": "pelicula"})
+        infot.append({'plataforma': plataforma, 'any': ano, 'valoracio': valoracion_promedio_tmbd, "tipus": "pelicula"})
+else:
+    print("No se encontraron resultados para películas.")
+
+
+consulta_valoracion_promedio_imdb_series = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            FLOOR(c.release_year_contingut_cinematografic / 10) * 10 AS intervalo_anio,
+            ROUND(AVG(imbd.score_imbd), 3) AS valoracion_promedio_imdb
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN imbd ON c.id_imbd = imbd.idimbd
+        WHERE 
+            c.type_contingut_cinematografic = '1'
+        GROUP BY 
+            p.name_plataforma, intervalo_anio
+        ORDER BY 
+            intervalo_anio;
+    """
+cursor.execute(consulta_valoracion_promedio_imdb_series)
+resultado_imdb = cursor.fetchall()
+
+consulta_valoracion_promedio_tmbd_series = """
+        SELECT 
+            p.name_plataforma AS plataforma,
+            FLOOR(c.release_year_contingut_cinematografic / 10) * 10 AS intervalo_anio,
+            ROUND(AVG(tmbd.score_tmbd), 3) AS valoracion_promedio_tmbd
+        FROM 
+            contingut_cinematografic c
+            JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+            JOIN plataforma p ON cp.idplataforma = p.idplataforma
+            JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+        WHERE 
+            c.type_contingut_cinematografic = '1'
+        GROUP BY 
+            p.name_plataforma, intervalo_anio
+        ORDER BY 
+            intervalo_anio;
+    """
+cursor.execute(consulta_valoracion_promedio_tmbd_series)
+resultado_tmbd = cursor.fetchall()
+resultado = cursor.fetchall()
+
+
+cursor.close()
+connection.close()
+
+if resultado_imdb and resultado_tmbd:
+    print("\n\nValoración promedio de series por plataforma (IMDB y TMBD):")
+    for fila_imdb, fila_tmbd in zip(resultado_imdb, resultado_tmbd):
+        plataforma = fila_imdb['plataforma']
+        ano = fila_imdb['intervalo_anio']
+        valoracion_promedio_imdb = fila_imdb['valoracion_promedio_imdb']
+        valoracion_promedio_tmbd = fila_tmbd['valoracion_promedio_tmbd']
+        #print(f"Año: {ano}, Plataforma: {plataforma}, Valoración Promedio (IMDB): {valoracion_promedio_imdb}, Valoración Promedio (TMBD): {valoracion_promedio_tmbd}")
+        infoi.append({'plataforma': plataforma, 'any': ano, 'valoracio': valoracion_promedio_imdb, "tipus": "serie"})
+        infot.append({'plataforma': plataforma, 'any': ano, 'valoracio': valoracion_promedio_tmbd, "tipus": "serie"})
+else:
+    print("No se encontraron resultados para películas.")
+
+#part graf
+sns.set_theme(style="ticks")
+dadesi = pd.DataFrame(infoi)
+dadest = pd.DataFrame(infot)
+paleta = sns.color_palette("Set2")
+sns.relplot(data=dadesi, x="any", y="valoracio", col="tipus", hue="plataforma", kind="line", palette=paleta, height=5, aspect=0.75, facet_kws=dict(sharex=False))
+plt.savefig("graficConsulta9imbd.png")
+plt.show()
+sns.relplot(data=dadest, x="any", y="valoracio", col="tipus", hue="plataforma", kind="line", palette=paleta, height=5, aspect=0.75, facet_kws=dict(sharex=False))
+plt.savefig("graficConsulta9tmbd.png")
+plt.show()

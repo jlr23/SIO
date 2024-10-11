@@ -1,0 +1,75 @@
+import pymysql.cursors
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+cursor = connection.cursor()
+
+# Consulta SQL para calcular la media de score_tmbd y score_imbd para películas divididas por género
+consulta_media_score_pelis_por_genero = """
+    SELECT 
+        CONCAT('**', g.name_genere, '**') AS genero,
+        ROUND(AVG(imbd.score_imbd), 3) AS media_score_imbd,
+        ROUND(AVG(tmbd.score_tmbd), 3) AS media_score_tmbd,
+        ROUND(AVG((imbd.score_imbd + tmbd.score_tmbd) / 2), 3) AS media_score_total
+    FROM 
+        contingut_cinematografic c
+        JOIN imbd ON c.id_imbd = imbd.idimbd
+        JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+        JOIN contingutcinematografic_genere cg ON c.id_contingut_cinematografic = cg.idcontingutCinematografic
+        JOIN genere g ON cg.idgenere = g.idgenere
+    WHERE 
+        c.type_contingut_cinematografic = '0'  -- Películas
+    GROUP BY 
+        g.name_genere
+    ORDER BY 
+        media_score_total DESC;
+"""
+
+# Ejecutar la consulta
+cursor.execute(consulta_media_score_pelis_por_genero)
+resultados = cursor.fetchall()
+
+info = []
+
+# Imprimir los resultados
+if resultados:
+    print("Media de score_tmbd y score_imbd para películas divididas por género:")
+    for resultado in resultados:
+        genero = resultado['genero']
+        media_score_imbd = resultado['media_score_imbd']
+        media_score_tmbd = resultado['media_score_tmbd']
+        media_score_total = resultado['media_score_total']
+        print(f"Gènero: {genero}, Media score total: {media_score_total}, Media score IMBD: {media_score_imbd}, Media score TMBD: {media_score_tmbd}")
+        info.append({"genero": genero, "punt": media_score_imbd, "tipo": "imbd"})
+        info.append({"genero": genero, "punt": media_score_tmbd, "tipo": "tmbd"})
+        info.append({"genero": genero, "punt": media_score_total, "tipo": "mitjana"})
+else:
+    print("No se encontraron resultados.")
+
+connection.close()
+
+#part grafica
+dades = pd.DataFrame(info)
+
+sns.set(style="whitegrid")
+sns.barplot(data=dades, x='genero', y='punt', hue='tipo', palette='Set2')
+
+
+plt.title('Comparació de puntuacions mitjes IMBD i TMBD per gènero')
+plt.xlabel('Gènere')
+plt.ylabel('Puntuació mitja')
+plt.legend(title='Tipus de puntuació', loc='center left', bbox_to_anchor=(1, 0.5))
+
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.savefig("graficConsulta15.png")
+plt.show()

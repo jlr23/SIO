@@ -1,0 +1,100 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+
+consulta_num_pelis_por_genero = """
+    SELECT 
+        p.name_plataforma AS plataforma,
+        g.name_genere AS genero,
+        COUNT(*) AS num_pelis
+    FROM 
+        contingut_cinematografic c
+        JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+        JOIN plataforma p ON cp.idplataforma = p.idplataforma
+        JOIN contingutcinematografic_genere cg ON c.id_contingut_cinematografic = cg.idcontingutCinematografic
+        JOIN genere g ON cg.idgenere = g.idgenere
+    WHERE 
+        c.type_contingut_cinematografic = '0'
+    GROUP BY 
+        p.name_plataforma, g.name_genere;
+"""
+
+cursor.execute(consulta_num_pelis_por_genero)
+resultadosp = cursor.fetchall()
+
+# Imprimir los resultados
+if resultadosp:
+    print("Número de películas de cada género para cada plataforma:")
+    for fila in resultadosp:
+        plataforma = fila['plataforma']
+        genero = fila['genero']
+        num_pelis = fila['num_pelis']
+        print(f"Plataforma: {plataforma}, Género: {genero}, Número de Películas: {num_pelis}")
+else:
+    print("No se encontraron resultados.")
+    
+consulta_num_series_por_genero = """
+    SELECT 
+        p.name_plataforma AS plataforma,
+        g.name_genere AS genero,
+        COUNT(*) AS num_pelis
+    FROM 
+        contingut_cinematografic c
+        JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+        JOIN plataforma p ON cp.idplataforma = p.idplataforma
+        JOIN contingutcinematografic_genere cg ON c.id_contingut_cinematografic = cg.idcontingutCinematografic
+        JOIN genere g ON cg.idgenere = g.idgenere
+    WHERE 
+        c.type_contingut_cinematografic = '1'
+    GROUP BY 
+        p.name_plataforma, g.name_genere;
+"""
+
+cursor.execute(consulta_num_series_por_genero)
+resultadoss = cursor.fetchall()
+
+# Imprimir los resultados
+if resultadoss:
+    print("\n\nNúmero de series de cada género para cada plataforma:")
+    for fila in resultadoss:
+        plataforma = fila['plataforma']
+        genero = fila['genero']
+        num_pelis = fila['num_pelis']
+        print(f"Plataforma: {plataforma}, Género: {genero}, Número de series: {num_pelis}")
+else:
+    print("No se encontraron resultados.")
+connection.close()
+
+#part grafica
+datap = pd.DataFrame(resultadosp)
+datas = pd.DataFrame(resultadoss)
+
+ax=sns.barplot(data=datap, x="plataforma", y="num_pelis", hue="genero", palette="tab10")
+plt.title("Número de pel.licules per gènere i plataforma")
+plt.xlabel("Plataforma")
+plt.ylabel("Número de pel.licules")
+plt.legend(title="Género", bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
+plt.savefig("graficConsulta10pelis.png")
+plt.show()
+
+ax=sns.barplot(data=datas, x="plataforma", y="num_pelis", hue="genero", palette="tab10")
+plt.title("Número de series per gènere i plataforma")
+plt.xlabel("Plataforma")
+plt.ylabel("Número de series")
+plt.xticks(rotation=45, ha="right")
+plt.legend(title="Género", bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+plt.tight_layout()
+plt.savefig("graficConsulta10series.png")
+plt.show()

@@ -1,0 +1,103 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+connection = pymysql.connect(
+host='localhost',
+user='root',
+password='',
+database='sio_1',
+cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+consulta = """
+    SELECT 
+        c.id_contingut_cinematografic,
+        tmbd.popularity_tmbd,
+        tmbd.score_tmbd
+    FROM 
+        contingut_cinematografic c
+        JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd;
+"""
+
+cursor.execute(consulta)
+resultados = cursor.fetchall()
+"TRAEM SCORE I POPULARITAT TMBD següent consulta agafarem les 1000 més populars i 1000 menys"
+if resultados:
+    print("Resultados:")
+    for fila in resultados:
+        id_contingut_cinematografic = fila['id_contingut_cinematografic']
+        popularity_tmbd = fila['popularity_tmbd']
+        score_tmbd = fila['score_tmbd']
+        print(f"ID Contenido Cinematográfico: {id_contingut_cinematografic}, Popularidad TMBD: {popularity_tmbd}, Puntuación TMBD: {score_tmbd}")
+else:
+    print("No se encontraron resultados.")
+
+
+consulta_mas_populares = """
+    SELECT 
+        c.id_contingut_cinematografic,
+        tmbd.popularity_tmbd,
+        tmbd.score_tmbd
+    FROM 
+        contingut_cinematografic c
+        JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+    ORDER BY 
+        tmbd.popularity_tmbd DESC
+    LIMIT 1000;
+"""
+
+# Ejecutar la consulta para las películas más populares
+cursor.execute(consulta_mas_populares)
+populares = cursor.fetchall()
+
+# Consulta SQL para obtener las 1000 películas menos populares de la tabla tmbd
+consulta_menos_populares = """
+    SELECT 
+        c.id_contingut_cinematografic,
+        tmbd.popularity_tmbd,
+        tmbd.score_tmbd
+    FROM 
+        contingut_cinematografic c
+        JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+    ORDER BY 
+        tmbd.popularity_tmbd ASC
+    LIMIT 1000;
+"""
+
+# Ejecutar la consulta para las películas menos populares
+cursor.execute(consulta_menos_populares)
+menos_populares = cursor.fetchall()
+
+if populares and menos_populares:
+    print("\nPelículas más populares:")
+    for fila in populares:
+        id_contingut_cinematografic = fila['id_contingut_cinematografic']
+        popularity_tmbd = fila['popularity_tmbd']
+        score_tmbd = fila['score_tmbd']
+        print(f"ID Contenido Cinematográfico: {id_contingut_cinematografic}, Popularidad TMBD: {popularity_tmbd}, Puntuación TMBD: {score_tmbd}")
+
+    print("\nPelículas menos populares:")
+    for fila in menos_populares:
+        id_contingut_cinematografic = fila['id_contingut_cinematografic']
+        popularity_tmbd = fila['popularity_tmbd']
+        score_tmbd = fila['score_tmbd']
+        print(f"ID Contenido Cinematográfico: {id_contingut_cinematografic}, Popularidad TMBD: {popularity_tmbd}, Puntuación TMBD: {score_tmbd}")
+else:
+    print("No se encontraron resultados.")
+
+
+connection.close()
+
+#part grafica
+datames = pd.DataFrame(populares)
+datamenys = pd.DataFrame(menos_populares)
+
+dades = pd.concat([datames, datamenys])
+sns.scatterplot(data=dades, x="popularity_tmbd", y="score_tmbd")
+plt.title("Relació entre popularitat y puntuació")
+plt.xlabel("Popularitat")
+plt.ylabel("Puntuació")
+plt.savefig("graficConsulta11.png")
+plt.show()

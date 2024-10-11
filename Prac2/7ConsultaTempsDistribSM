@@ -1,0 +1,92 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+consulta_Distr_Series = """
+    SELECT 
+p.name_plataforma AS plataforma,
+    FLOOR(c.runtime_contingut_cinematografic / 10) * 10 AS duracion_redondeada,
+    COUNT(*) AS cantidad_series
+FROM 
+    contingut_cinematografic c
+    JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+    JOIN plataforma p ON cp.idplataforma = p.idplataforma
+WHERE 
+    c.type_contingut_cinematografic = '0'
+GROUP BY 
+    p.name_plataforma, FLOOR(c.runtime_contingut_cinematografic / 10) * 10
+ORDER BY 
+    p.name_plataforma, duracion_redondeada;
+"""
+cursor.execute(consulta_Distr_Series)
+contingut_Distr = cursor.fetchall()
+
+consulta_Distr_Pelis= """
+    SELECT 
+p.name_plataforma AS plataforma,
+    FLOOR(c.runtime_contingut_cinematografic / 10) * 10 AS duracion_redondeada,
+    COUNT(*) AS cantidad_series
+FROM 
+    contingut_cinematografic c
+    JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+    JOIN plataforma p ON cp.idplataforma = p.idplataforma
+WHERE 
+    c.type_contingut_cinematografic = '1'
+GROUP BY 
+    p.name_plataforma, FLOOR(c.runtime_contingut_cinematografic / 10) * 10
+ORDER BY 
+    p.name_plataforma, duracion_redondeada;
+"""
+cursor.execute(consulta_Distr_Pelis)
+contingut_Distr2 = cursor.fetchall()
+
+cursor.close()
+connection.close()
+
+if contingut_Distr:
+    print("Clasificació de series per intervals de tiemps de 10 minuts:")
+    for fila in contingut_Distr:
+        plataform = fila['plataforma']
+        duracion_redondeada = fila['duracion_redondeada']
+        cantidad_series = fila['cantidad_series']
+        print(f"Plataforma: {plataform}, Duració aproximada: {duracion_redondeada} minuts, Quantitats de Series: {cantidad_series}")
+else:
+    print("No se encontraron resultados.")
+
+if contingut_Distr2:
+    print("Clasificació de series per intervals de tiemps de 10 minuts:")
+    for fila in contingut_Distr2:
+        plataform = fila['plataforma']
+        duracion_redondeada = fila['duracion_redondeada']
+        cantidad_series = fila['cantidad_series']
+        print(f"Plataforma: {plataform}, Duració aproximada: {duracion_redondeada} minuts, Quantitats de Pelis: {cantidad_series}")
+else:
+    print("No se encontraron resultados.")
+
+#part grafica
+dades=pd.DataFrame(contingut_Distr2)
+sns.barplot(data=dades, x='duracion_redondeada', y='cantidad_series', hue='plataforma')
+plt.xlabel('Duració en minuts')
+plt.ylabel('Número de series')
+plt.title('Número de series per duració en plataformes')
+plt.legend(loc='upper right')
+plt.savefig("graficConsulta7.png")
+plt.show()
+
+dades=pd.DataFrame(contingut_Distr)
+sns.barplot(data=dades, x='duracion_redondeada', y='cantidad_series', hue='plataforma')
+plt.xlabel('Duració en minuts')
+plt.ylabel('Número de pel·lícules')
+plt.title('Número de pel·lícules per duració en plataformes')
+plt.legend(loc='upper right')
+plt.savefig("graficConsulta7.png")
+plt.show()

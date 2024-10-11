@@ -1,0 +1,60 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+
+consultaSeriesPlataforma = """
+    SELECT p.name_plataforma AS plataforma,
+        SUM(CASE WHEN c.type_contingut_cinematografic = 1 THEN 1 ELSE 0 END) AS total_SHOWS,
+        SUM(CASE WHEN c.type_contingut_cinematografic = 0 THEN 1 ELSE 0 END) AS total_MOVIES
+    FROM contingut_cinematografic c
+    JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+    JOIN plataforma p ON cp.idplataforma = p.idplataforma
+    GROUP BY p.name_plataforma;
+"""
+
+
+cursor.execute(consultaSeriesPlataforma)
+contingut_per_plataforma = cursor.fetchall()
+
+cursor.close()
+connection.close()
+
+info = []
+
+if contingut_per_plataforma:
+    print("Contingut por plataforma:")
+    for fila in contingut_per_plataforma:
+        plataforma = fila['plataforma']
+        total_series = fila['total_SHOWS']
+        total_pelicules = fila['total_MOVIES']
+        print(f"Plataforma: {plataforma}, Total de series: {total_series}, Total de pelicul·les: {total_pelicules}")
+
+        info.append({'Plataforma': plataforma, 'Total': total_series, 'Tipo': 'Series'})
+        info.append({'Plataforma': plataforma, 'Total': total_pelicules, 'Tipo': 'Pelicules'})
+else:
+    print("No hi ha resultats.")
+
+#part del grafic
+dades = pd.DataFrame(info)
+
+g = sns.catplot(data=dades, kind='bar', x='Plataforma', y='Total', hue='Tipo')
+g.despine(left=True)
+
+plt.title('Distribució pel.licules/series')
+plt.xlabel('Plataforma')
+plt.ylabel('Número de pel.licules/series')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("graficConsulta2.png")
+plt.show()

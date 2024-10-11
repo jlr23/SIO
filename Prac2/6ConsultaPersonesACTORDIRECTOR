@@ -1,0 +1,49 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+
+consulta_ACTORDIRECTOR = """
+    SELECT p.name_persones AS persones
+    FROM persones p
+    JOIN contingutcinematografic_persones cp ON p.idpersones = cp.id_persona
+    JOIN rols r ON cp.id_rols = r.idrols
+    WHERE r.namerols = 'ACTOR/DIRECTOR';
+"""
+cursor.execute(consulta_ACTORDIRECTOR)
+resultat = cursor.fetchall()
+
+cursor.close()
+connection.close()
+
+if resultat:
+    print("Persones amb rol ACTOR/DIRECTOR:")
+    for fila in resultat:
+        persona = fila['persones']
+        print(f"Persona: {persona}")
+    print(f"Numero: {len(resultat)}")
+else:
+    print("No s'han trobat resultats.")
+
+
+#part grafica
+etiquetes = ['Persones amb rol d\'actor i director', 'Persones amb rol d\'actor o director']
+mides = [len(resultat), 19000 - len(resultat)]
+
+plt.figure(figsize=(12, 8))
+sns.set_palette("pastel")
+
+plt.pie(mides, labels=etiquetes, autopct='%1.2f%%', startangle=140)
+plt.title('Persones amb rol d\'actor i director')
+plt.axis('equal')
+plt.savefig("graficConsulta6.png")
+plt.show()

@@ -1,0 +1,53 @@
+import pymysql.cursors
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+consultaPlataforma = """
+    SELECT p.name_plataforma AS plataforma,
+    COUNT(c.id_contingut_cinematografic) AS total_contingut_accio
+    FROM contingut_cinematografic c
+    JOIN contingutcinematografic_plataforma cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+    JOIN plataforma p ON cp.idplataforma = p.idplataforma
+    JOIN contingutcinematografic_genere cg ON c.id_contingut_cinematografic = cg.idcontingutCinematografic
+    JOIN genere g ON cg.idgenere = g.idgenere
+    WHERE (c.type_contingut_cinematografic = '0')
+    AND g.name_genere = 'action'
+    GROUP BY p.name_plataforma
+    ORDER BY total_contingut_accio DESC;
+"""
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+
+cursor.execute(consultaPlataforma)
+plataformes_contingut_accio = cursor.fetchall()
+
+cursor.close()
+connection.close()
+
+if plataformes_contingut_accio:
+    # Ordenar las plataformas de major a menor
+    plataformas_ordenadas = sorted(plataformes_contingut_accio, key=lambda x: x['total_contingut_accio'], reverse=True)
+    print("Plataformas ordenades de major a menor contingut d'acció:")
+    for plataforma in plataformas_ordenadas:
+        print(plataforma['plataforma'], "-", plataforma['total_contingut_accio'])
+else:
+    print("No s'ha trobat resultats.")
+
+#part del grafic
+dades = pd.DataFrame(plataformas_ordenadas)
+sns.catplot(data=dades, kind='bar', x='plataforma', y='total_contingut_accio')
+plt.title('Contingut d\'acció de les plataformes')
+plt.xlabel('Plataforma')
+plt.ylabel('Número de pel.licules/series d\'acció')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("graficConsulta1.png")
+plt.show()

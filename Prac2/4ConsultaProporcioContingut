@@ -1,0 +1,47 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+consultaProporcioRepetit = """
+    SELECT COUNT(*) AS contingut_en_mes_plataformes,
+    (SELECT COUNT(*) FROM contingut_cinematografic) AS total_contingut
+    FROM (
+        SELECT idcontingutCinematografic
+        FROM contingutcinematografic_plataforma
+        GROUP BY idcontingutCinematografic
+        HAVING COUNT(idplataforma) > 1
+    ) AS conteo_contingut;
+"""
+cursor.execute(consultaProporcioRepetit)
+resultat = cursor.fetchone()
+
+cursor.close()
+connection.close()
+
+if resultat:
+    contingut_en_mes_plataformes = resultat['contingut_en_mes_plataformes']
+    total_contingut = resultat['total_contingut']
+    proporcion = contingut_en_mes_plataformes / total_contingut
+    print(f"Proporció de contingut en més d'una plataforma d'streaming: {proporcion:.2%}")
+    print(f"Contingut en més d'una plataforma: {contingut_en_mes_plataformes} de {total_contingut}")
+else:
+    print("No s'han trobat resultats.")
+
+#part grafica
+etiquetes = ['Contingut en més de una plataforma', 'Contingut en una plataforma']
+mides = [10.04, 100 - 10.04]
+plt.figure(figsize=(12, 8))
+sns.set_palette("pastel")
+plt.pie(mides, labels=etiquetes, autopct='%1.2f%%', startangle=140)
+plt.title('Proporció de contingut en més de una plataforma')
+plt.axis('equal')
+plt.savefig("graficConsulta4.png")
+plt.show()

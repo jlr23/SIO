@@ -1,0 +1,89 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import json
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+cursor = connection.cursor()
+
+consulta_rankings = """
+    SELECT p.name_paisos AS paisos,
+    COUNT(c.id_contingut_cinematografic) AS total_contingut
+    FROM contingut_cinematografic c
+    JOIN contingutcinematografic_paisos cp ON c.id_contingut_cinematografic = cp.idcontingutCinematografic
+    JOIN paisos p ON cp.id_paisos = p.idpaisos
+    GROUP BY p.name_paisos
+    ORDER BY total_contingut DESC;
+"""
+cursor.execute(consulta_rankings)
+contingut_per_regio = cursor.fetchall()
+
+cursor.close()
+connection.close()
+
+top = []
+contador = 0
+
+if contingut_per_regio:
+    print("Contingut cinematogràfic per regió:")
+    for fila in contingut_per_regio:
+        regio = fila['paisos']
+        total_contingut = fila['total_contingut']
+        print(f"Regió: {regio}, Total de contingut: {total_contingut}")
+        if contador < 10000000000000:
+            top.append({"regio": regio, "contingut": total_contingut})
+            contador = contador + 1
+else:
+    print("No s'han trobat resultats.")
+    
+# Guardamos los datos en un archivo JSON
+with open('datos.json', 'w') as json_file:
+    json.dump(top, json_file, indent=4, ensure_ascii=False)
+
+# Guardamos los datos en un archivo de texto
+with open('datos.txt', 'w') as text_file:
+    if contingut_per_regio:
+        text_file.write("Contingut cinematogràfic per regió:\n")
+        for fila in contingut_per_regio:
+            regio = fila['paisos']
+            total_contingut = fila['total_contingut']
+            text_file.write(f"Regió: {regio}, Total de contingut: {total_contingut}\n")
+    else:
+        text_file.write("No s'han trobat resultats.\n")    
+
+
+#part grafica
+
+rangos = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]
+
+dades=pd.DataFrame(contingut_per_regio)
+
+
+sns.histplot(dades['total_contingut'], bins=rangos, color='skyblue', edgecolor='black')
+
+plt.title('Distribució de contingut cinematogràfic per rang de països')
+plt.xlabel('Quantitat de contingut')
+plt.ylabel('Número de països')
+plt.xticks(rangos)
+
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.savefig("graficConsulta5.png")
+plt.show()
+
+#top 10
+dades=pd.DataFrame(top)
+sns.barplot(data=dades, x='contingut', y='regio')
+plt.xlabel('Contingut produït')
+plt.ylabel('Regio')
+plt.title('Top 10 regions amb més producció')
+plt.tight_layout()
+plt.savefig("graficConsulta5top.png")
+plt.show()

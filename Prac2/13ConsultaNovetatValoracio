@@ -1,0 +1,101 @@
+import pymysql.cursors
+import matplotlib.pyplot as plt
+import pandas as pd
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='sio_1',
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+cursor = connection.cursor()
+
+# Consulta SQL para calcular la media del puntaje IMBD y TMBD por intervalo de 10 años
+consulta_intervalos_10_anos = """
+    SELECT 
+        FLOOR(c.release_year_contingut_cinematografic / 10) * 10 AS intervalo_años,
+        COUNT(c.id_contingut_cinematografic) AS cantidad_contenido,
+        AVG(imbd.score_imbd) AS puntaje_imbd_medio,
+        AVG(tmbd.score_tmbd) AS puntaje_tmbd_medio,
+        MAX(imbd.score_imbd) AS max_score_imbd,
+        MIN(imbd.score_imbd) AS min_score_imbd,
+        MAX(tmbd.score_tmbd) AS max_score_tmbd,
+        MIN(tmbd.score_tmbd) AS min_score_tmbd
+    FROM 
+        contingut_cinematografic c
+        JOIN imbd ON c.id_imbd = imbd.idimbd
+        JOIN tmbd ON c.id_tmbdcontingut_cinematografic = tmbd.idtmbd
+    GROUP BY 
+
+        FLOOR(c.release_year_contingut_cinematografic / 10) *10
+    ORDER BY 
+        intervalo_años ASC;  -- Ordenar por intervalo de años ascendente
+"""
+
+# Ejecutar la consulta
+cursor.execute(consulta_intervalos_10_anos)
+resultados_intervalos_10_anos = cursor.fetchall()
+
+intervalos_años = []
+puntajes_imbd_medio = []
+puntajes_tmbd_medio = []
+max_scores_imbd = []
+min_scores_imbd = []
+max_scores_tmbd = []
+min_scores_tmbd = []
+# Imprimir los resultados
+if resultados_intervalos_10_anos:
+    print("Información por intervalo de 10 años:")
+    print("-----------------------------------------")
+    for fila in resultados_intervalos_10_anos:
+        intervalos_años.append(fila['intervalo_años'])
+        puntajes_imbd_medio.append(fila['puntaje_imbd_medio'])
+        puntajes_tmbd_medio.append(fila['puntaje_tmbd_medio'])
+        max_scores_imbd.append(fila['max_score_imbd'])
+        min_scores_imbd.append(fila['min_score_imbd'])
+        max_scores_tmbd.append(fila['max_score_tmbd'])
+        min_scores_tmbd.append(fila['min_score_tmbd'])
+        intervalo_años = fila['intervalo_años']
+        cantidad_contenido = fila['cantidad_contenido']
+        puntaje_imbd_medio = fila['puntaje_imbd_medio']
+        puntaje_tmbd_medio = fila['puntaje_tmbd_medio']
+        max_score_imbd = fila['max_score_imbd']
+        min_score_imbd = fila['min_score_imbd']
+        max_score_tmbd = fila['max_score_tmbd']
+        min_score_tmbd = fila['min_score_tmbd']
+        print(f"Intervalo de Años: {intervalo_años} - {intervalo_años + 9}")
+        print(f"Cantidad de Contenido: {cantidad_contenido}")
+        print(f"Media del Puntaje IMBD: {puntaje_imbd_medio}")
+        print(f"Media del Puntaje TMBD: {puntaje_tmbd_medio}")
+        print(f"Mejor Puntaje IMBD: {max_score_imbd}")
+        print(f"Peor Puntaje IMBD: {min_score_imbd}")
+        print(f"Mejor Puntaje TMBD: {max_score_tmbd}")
+        print(f"Peor Puntaje TMBD: {min_score_tmbd}")
+        print("-----------------------------------------")
+
+else:
+    print("No se encontraron resultados.")
+
+
+connection.close()
+
+#part grafica
+plt.plot(intervalos_años, puntajes_imbd_medio, label='Puntuació Mitjana IMBD', marker='o', color='orange')
+plt.plot(intervalos_años, max_scores_imbd, linestyle='--', label='Puntuació Màxima IMBD', color='red')
+plt.plot(intervalos_años, min_scores_imbd, linestyle='--', label='Puntuació Mínima IMBD', color='green')
+
+# Puntuació TMBD
+plt.plot(intervalos_años, puntajes_tmbd_medio, label='Puntuació Mitjana TMBD', marker='x', color='blue')
+plt.plot(intervalos_años, max_scores_tmbd, linestyle='--', label='Puntuació Màxima TMBD', color='purple')
+plt.plot(intervalos_años, min_scores_tmbd, linestyle='--', label='Puntuació Mínima TMBD', color='pink')
+
+plt.xlabel('Interval d\'Anys')
+plt.ylabel('Puntuació')
+plt.title('Puntuacions IMBD i TMBD per Interval d\'Anys')
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.savefig("grafic_puntuacions.png")
+plt.show()
