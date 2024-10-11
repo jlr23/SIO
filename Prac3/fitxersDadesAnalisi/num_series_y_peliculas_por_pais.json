@@ -1,0 +1,610 @@
+{
+    "AE": {
+        "num_series": 2,
+        "num_peliculas": 26
+    },
+    "AR": {
+        "num_series": 34,
+        "num_peliculas": 80
+    },
+    "AT": {
+        "num_series": 3,
+        "num_peliculas": 30
+    },
+    "AU": {
+        "num_series": 125,
+        "num_peliculas": 211
+    },
+    "BE": {
+        "num_series": 17,
+        "num_peliculas": 122
+    },
+    "BR": {
+        "num_series": 63,
+        "num_peliculas": 97
+    },
+    "BY": {
+        "num_series": 1,
+        "num_peliculas": 1
+    },
+    "CA": {
+        "num_series": 224,
+        "num_peliculas": 747
+    },
+    "CH": {
+        "num_series": 3,
+        "num_peliculas": 48
+    },
+    "CL": {
+        "num_series": 7,
+        "num_peliculas": 34
+    },
+    "CN": {
+        "num_series": 239,
+        "num_peliculas": 240
+    },
+    "CO": {
+        "num_series": 29,
+        "num_peliculas": 33
+    },
+    "CZ": {
+        "num_series": 5,
+        "num_peliculas": 43
+    },
+    "DE": {
+        "num_series": 64,
+        "num_peliculas": 413
+    },
+    "DK": {
+        "num_series": 14,
+        "num_peliculas": 71
+    },
+    "EG": {
+        "num_series": 5,
+        "num_peliculas": 41
+    },
+    "ES": {
+        "num_series": 110,
+        "num_peliculas": 261
+    },
+    "FI": {
+        "num_series": 4,
+        "num_peliculas": 19
+    },
+    "FR": {
+        "num_series": 107,
+        "num_peliculas": 618
+    },
+    "GB": {
+        "num_series": 568,
+        "num_peliculas": 1275
+    },
+    "HK": {
+        "num_series": 3,
+        "num_peliculas": 152
+    },
+    "HR": {
+        "num_series": 2,
+        "num_peliculas": 3
+    },
+    "HU": {
+        "num_series": 4,
+        "num_peliculas": 17
+    },
+    "ID": {
+        "num_series": 3,
+        "num_peliculas": 64
+    },
+    "IE": {
+        "num_series": 11,
+        "num_peliculas": 76
+    },
+    "IL": {
+        "num_series": 17,
+        "num_peliculas": 43
+    },
+    "IN": {
+        "num_series": 71,
+        "num_peliculas": 1467
+    },
+    "IO": {
+        "num_series": 3,
+        "num_peliculas": 0
+    },
+    "IS": {
+        "num_series": 3,
+        "num_peliculas": 15
+    },
+    "IT": {
+        "num_series": 36,
+        "num_peliculas": 257
+    },
+    "JO": {
+        "num_series": 2,
+        "num_peliculas": 5
+    },
+    "JP": {
+        "num_series": 570,
+        "num_peliculas": 344
+    },
+    "KN": {
+        "num_series": 1,
+        "num_peliculas": 0
+    },
+    "KR": {
+        "num_series": 782,
+        "num_peliculas": 240
+    },
+    "KW": {
+        "num_series": 1,
+        "num_peliculas": 4
+    },
+    "LB": {
+        "num_series": 5,
+        "num_peliculas": 30
+    },
+    "LU": {
+        "num_series": 3,
+        "num_peliculas": 24
+    },
+    "MA": {
+        "num_series": 1,
+        "num_peliculas": 12
+    },
+    "MX": {
+        "num_series": 71,
+        "num_peliculas": 165
+    },
+    "MY": {
+        "num_series": 2,
+        "num_peliculas": 26
+    },
+    "NC": {
+        "num_series": 2,
+        "num_peliculas": 0
+    },
+    "NG": {
+        "num_series": 4,
+        "num_peliculas": 75
+    },
+    "NL": {
+        "num_series": 10,
+        "num_peliculas": 68
+    },
+    "NO": {
+        "num_series": 11,
+        "num_peliculas": 58
+    },
+    "NZ": {
+        "num_series": 13,
+        "num_peliculas": 54
+    },
+    "PE": {
+        "num_series": 1,
+        "num_peliculas": 11
+    },
+    "PH": {
+        "num_series": 8,
+        "num_peliculas": 97
+    },
+    "PL": {
+        "num_series": 15,
+        "num_peliculas": 59
+    },
+    "PR": {
+        "num_series": 2,
+        "num_peliculas": 10
+    },
+    "PT": {
+        "num_series": 3,
+        "num_peliculas": 10
+    },
+    "RO": {
+        "num_series": 6,
+        "num_peliculas": 26
+    },
+    "RU": {
+        "num_series": 16,
+        "num_peliculas": 51
+    },
+    "SA": {
+        "num_series": 5,
+        "num_peliculas": 5
+    },
+    "SE": {
+        "num_series": 12,
+        "num_peliculas": 88
+    },
+    "SG": {
+        "num_series": 17,
+        "num_peliculas": 15
+    },
+    "SN": {
+        "num_series": 1,
+        "num_peliculas": 4
+    },
+    "SY": {
+        "num_series": 1,
+        "num_peliculas": 3
+    },
+    "TH": {
+        "num_series": 22,
+        "num_peliculas": 41
+    },
+    "TN": {
+        "num_series": 1,
+        "num_peliculas": 4
+    },
+    "TR": {
+        "num_series": 22,
+        "num_peliculas": 69
+    },
+    "TW": {
+        "num_series": 86,
+        "num_peliculas": 37
+    },
+    "UA": {
+        "num_series": 1,
+        "num_peliculas": 15
+    },
+    "US": {
+        "num_series": 3052,
+        "num_peliculas": 9300
+    },
+    "UY": {
+        "num_series": 2,
+        "num_peliculas": 12
+    },
+    "XX": {
+        "num_series": 8,
+        "num_peliculas": 132
+    },
+    "ZA": {
+        "num_series": 15,
+        "num_peliculas": 84
+    },
+    "ZM": {
+        "num_series": 1,
+        "num_peliculas": 0
+    },
+    "AF": {
+        "num_peliculas": 9,
+        "num_series": 0
+    },
+    "AL": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "AM": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "AN": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "AO": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "AQ": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "BA": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "BD": {
+        "num_peliculas": 5,
+        "num_series": 0
+    },
+    "BF": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "BG": {
+        "num_peliculas": 10,
+        "num_series": 0
+    },
+    "BM": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "BO": {
+        "num_peliculas": 5,
+        "num_series": 0
+    },
+    "BS": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "BT": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "CD": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "CI": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "CM": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "CR": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "CS": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "CU": {
+        "num_peliculas": 7,
+        "num_series": 0
+    },
+    "CY": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "DO": {
+        "num_peliculas": 10,
+        "num_series": 0
+    },
+    "DZ": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "EC": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "EE": {
+        "num_peliculas": 5,
+        "num_series": 0
+    },
+    "ET": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "FJ": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "FO": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "GE": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "GH": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "GL": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "GQ": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "GR": {
+        "num_peliculas": 15,
+        "num_series": 0
+    },
+    "GT": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "HN": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "IQ": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "IR": {
+        "num_peliculas": 18,
+        "num_series": 0
+    },
+    "JM": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "KE": {
+        "num_peliculas": 6,
+        "num_series": 0
+    },
+    "KG": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "KH": {
+        "num_peliculas": 5,
+        "num_series": 0
+    },
+    "KI": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "KZ": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "Lebanon": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "LI": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "LK": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "LT": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "LV": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "LY": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "MC": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "MK": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "MN": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "MO": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "MT": {
+        "num_peliculas": 5,
+        "num_series": 0
+    },
+    "MU": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "MW": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "NP": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "PA": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "PF": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "PK": {
+        "num_peliculas": 6,
+        "num_series": 0
+    },
+    "PS": {
+        "num_peliculas": 16,
+        "num_series": 0
+    },
+    "PY": {
+        "num_peliculas": 3,
+        "num_series": 0
+    },
+    "QA": {
+        "num_peliculas": 14,
+        "num_series": 0
+    },
+    "RS": {
+        "num_peliculas": 8,
+        "num_series": 0
+    },
+    "RW": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "SI": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "SK": {
+        "num_peliculas": 17,
+        "num_series": 0
+    },
+    "SO": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "SU": {
+        "num_peliculas": 19,
+        "num_series": 0
+    },
+    "SUHH": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "SV": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "SZ": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "TC": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "TT": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "TZ": {
+        "num_peliculas": 4,
+        "num_series": 0
+    },
+    "UG": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "United States of America": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "VA": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "VE": {
+        "num_peliculas": 10,
+        "num_series": 0
+    },
+    "VN": {
+        "num_peliculas": 14,
+        "num_series": 0
+    },
+    "XC": {
+        "num_peliculas": 5,
+        "num_series": 0
+    },
+    "XG": {
+        "num_peliculas": 1,
+        "num_series": 0
+    },
+    "XK": {
+        "num_peliculas": 2,
+        "num_series": 0
+    },
+    "YU": {
+        "num_peliculas": 8,
+        "num_series": 0
+    },
+    "ZW": {
+        "num_peliculas": 2,
+        "num_series": 0
+    }
+}

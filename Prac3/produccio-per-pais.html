@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="posicions.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var datosColor = [
+            { "regio": "USA", "contingut": 12352 },
+            { "regio": "GBR", "contingut": 1843 },
+            { "regio": "IND", "contingut": 1538 },
+            { "regio": "KR", "contingut": 1022 },
+            { "regio": "CA", "contingut": 971 },
+            { "regio": "JP", "contingut": 914 },
+            { "regio": "FR", "contingut": 725 },
+            { "regio": "CN", "contingut": 479 },
+            { "regio": "DE", "contingut": 477 },
+            { "regio": "ES", "contingut": 371 }
+        ];
+
+        var map, info, geojson;
+
+        function cargarDatos(url) {
+            return new Promise((resolve, reject) => {
+                fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Respuesta no válida');
+                    }
+                    return response.json();
+                })
+                .then(jsonData => resolve(jsonData))
+                .catch(error => {
+                    console.error('Error al cargar datos');
+                    reject(error);
+                });
+            });
+        }
+
+        function getColor(d) {
+            return d > 1000 ? '#00096C' :
+                   d > 500  ? '#000D9D' :
+                   d > 200  ? '#0010C0' :
+                   d > 100  ? '#061BFE' :
+                   d > 50   ? '#3E4FFF' :
+                   d > 20   ? '#6875FF' :
+                   d > 10   ? '#949DF9' :
+                   d > 5    ? '#C5CAFC' :
+                   d > 0    ? '#D3D7FF' :
+                              '#EFF0FB';
+        }
+
+        function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.contingut),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7,
+            };
+        }
+
+        function highlightFeature(e) {
+            var layer = e.target;
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+
+            info.update(layer.feature.properties);
+        }
+
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+            info.update();
+        }
+
+        function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight
+            });
+        }
+
+        function crearMapa(datosGeoJSON) {
+            map = L.map('map').setView([0, 0], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            info = L.control();
+
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+
+            info.update = function (props) {
+                this._div.innerHTML = '<h4>Producción por país</h4>' +  (props ?
+                    '<b>' + props.ADMIN + '</b><br />' + props.contingut + ' pel·licules/sèries'
+                    : 'Pasa el ratón sobre un país');
+            };
+
+            info.addTo(map);
+
+            geojson = L.geoJson(datosGeoJSON, {
+                style: style,
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
+            var legend = L.control({ position: 'bottomright' });
+
+            legend.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [0, 5, 10, 20, 50, 100, 200, 500, 1000],
+                    labels = [];
+
+                for (var i = 0; i < grades.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                }
+
+                return div;
+            };
+
+            legend.addTo(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarDatos('updated_countries.geojson')
+                .then(datosGeoJSON => {
+                    crearMapa(datosGeoJSON);
+                })
+                .catch(error => {
+                    console.log('Error al cargar los datos:', error);
+                });
+        });
+    </script>
+</body>
+</html>

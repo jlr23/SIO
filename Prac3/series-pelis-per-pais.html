@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="posicions.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map, info, geojson;
+
+        function cargarDatos(url) {
+            return new Promise((resolve, reject) => {
+                fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Respuesta no válida');
+                    }
+                    return response.json();
+                })
+                .then(jsonData => resolve(jsonData))
+                .catch(error => {
+                    console.error('Error al cargar datos');
+                    reject(error);
+                });
+            });
+        }
+
+        function getColor(d) {
+            return d == 'serie' ? '#800026' :
+                d == 'pelicula' ? '#00c113' :
+                '#FFFFFF';
+        }
+
+        function style(feature) {
+            var pred = feature.properties.num_series > feature.properties.num_peliculas ? 'serie' : 'pelicula';
+            return {
+                fillColor: getColor(pred),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7
+            };
+        }
+
+        function highlightFeature(e) {
+            var layer = e.target;
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+
+            info.update(layer.feature.properties);
+        }
+
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+            info.update();
+        }
+
+        function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight
+            });
+        }
+
+        function crearMapa(datosGeoJSON) {
+            map = L.map('map').setView([0, 0], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            info = L.control();
+
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+
+            info.update = function (props) {
+                if (props) {
+                    var pred = props.num_series > props.num_peliculas ? 'serie' : 'pelicula';
+                    var num = pred === 'serie' ? props.num_series : props.num_peliculas;
+                    var num2 = pred === 'serie' ? props.num_peliculas : props.num_series;
+                    this._div.innerHTML = '<h4>Tipus contingut predominant</h4>' +
+                        '<b>' + props.ADMIN + '</b><br />' +
+                        'Tipus: ' + pred + '<br />' +
+                        '# predominant: ' + num + '<br />' +
+                        '# secondari: ' + num2;
+                } else {
+                    this._div.innerHTML = 'Pasa el ratón sobre un país';
+                }
+            };
+
+            info.addTo(map);
+
+            geojson = L.geoJson(datosGeoJSON, {
+                style: style,
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
+            var legend = L.control({ position: 'bottomleft' });
+
+            legend.onAdd = function(map) {
+                var div = L.DomUtil.create('div', 'info legend-horizontal');
+                var categories = [
+                    'serie', 'pelicula'
+                ];
+
+                var labels = [];
+                var colors = [
+                    '#800026', '#00c113'
+                ];
+
+                // Loop through our categories and generate a label with a colored square for each category
+                for (var i = 0; i < categories.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + colors[i] + '"></i> ' +
+                        categories[i] + '<br>';
+                }
+
+                return div;
+            };
+
+            legend.addTo(map);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarDatos('updated_countries_series_pelis.geojson')
+                .then(datosGeoJSON => {
+                    crearMapa(datosGeoJSON);
+                })
+                .catch(error => {
+                    console.log('Error al cargar los datos:', error);
+                });
+        });
+    </script>
+</body>
+</html>

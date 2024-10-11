@@ -1,0 +1,1752 @@
+[
+    {
+        "pais": "AE",
+        "genere": "drama",
+        "count_genere": 18,
+        "total_contenido": 28,
+        "porcentaje": 64.2857
+    },
+    {
+        "pais": "AF",
+        "genere": "documentation",
+        "count_genere": 5,
+        "total_contenido": 9,
+        "porcentaje": 55.5556
+    },
+    {
+        "pais": "AF",
+        "genere": "war",
+        "count_genere": 5,
+        "total_contenido": 9,
+        "porcentaje": 55.5556
+    },
+    {
+        "pais": "AL",
+        "genere": "drama",
+        "count_genere": 4,
+        "total_contenido": 4,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "AM",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "AM",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "AN",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "AO",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "AQ",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "AR",
+        "genere": "drama",
+        "count_genere": 74,
+        "total_contenido": 114,
+        "porcentaje": 64.9123
+    },
+    {
+        "pais": "AT",
+        "genere": "european",
+        "count_genere": 25,
+        "total_contenido": 33,
+        "porcentaje": 75.7576
+    },
+    {
+        "pais": "AU",
+        "genere": "drama",
+        "count_genere": 186,
+        "total_contenido": 336,
+        "porcentaje": 55.3571
+    },
+    {
+        "pais": "BA",
+        "genere": "war",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "BA",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "BA",
+        "genere": "history",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "BD",
+        "genere": "drama",
+        "count_genere": 5,
+        "total_contenido": 5,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BE",
+        "genere": "drama",
+        "count_genere": 91,
+        "total_contenido": 139,
+        "porcentaje": 65.4676
+    },
+    {
+        "pais": "BF",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BF",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BG",
+        "genere": "action",
+        "count_genere": 8,
+        "total_contenido": 10,
+        "porcentaje": 80.0
+    },
+    {
+        "pais": "BM",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BM",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BM",
+        "genere": "crime",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BO",
+        "genere": "drama",
+        "count_genere": 3,
+        "total_contenido": 5,
+        "porcentaje": 60.0
+    },
+    {
+        "pais": "BR",
+        "genere": "drama",
+        "count_genere": 79,
+        "total_contenido": 160,
+        "porcentaje": 49.375
+    },
+    {
+        "pais": "BS",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "BS",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "BS",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "BS",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "BT",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BT",
+        "genere": "family",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "BY",
+        "genere": "family",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "BY",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "BY",
+        "genere": "war",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "BY",
+        "genere": "animation",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "CA",
+        "genere": "drama",
+        "count_genere": 437,
+        "total_contenido": 971,
+        "porcentaje": 45.0051
+    },
+    {
+        "pais": "CD",
+        "genere": "documentation",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CD",
+        "genere": "war",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CH",
+        "genere": "european",
+        "count_genere": 34,
+        "total_contenido": 51,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "CI",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "CL",
+        "genere": "drama",
+        "count_genere": 25,
+        "total_contenido": 41,
+        "porcentaje": 60.9756
+    },
+    {
+        "pais": "CM",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "CM",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "CM",
+        "genere": "romance",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "CM",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "CN",
+        "genere": "drama",
+        "count_genere": 322,
+        "total_contenido": 479,
+        "porcentaje": 67.2234
+    },
+    {
+        "pais": "CO",
+        "genere": "drama",
+        "count_genere": 38,
+        "total_contenido": 62,
+        "porcentaje": 61.2903
+    },
+    {
+        "pais": "CR",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CR",
+        "genere": "comedy",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CS",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CS",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CS",
+        "genere": "romance",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CS",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "CU",
+        "genere": "documentation",
+        "count_genere": 4,
+        "total_contenido": 7,
+        "porcentaje": 57.1429
+    },
+    {
+        "pais": "CY",
+        "genere": "thriller",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "CY",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "CZ",
+        "genere": "european",
+        "count_genere": 33,
+        "total_contenido": 48,
+        "porcentaje": 68.75
+    },
+    {
+        "pais": "DE",
+        "genere": "drama",
+        "count_genere": 272,
+        "total_contenido": 477,
+        "porcentaje": 57.0231
+    },
+    {
+        "pais": "DK",
+        "genere": "european",
+        "count_genere": 58,
+        "total_contenido": 85,
+        "porcentaje": 68.2353
+    },
+    {
+        "pais": "DO",
+        "genere": "comedy",
+        "count_genere": 5,
+        "total_contenido": 10,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "DO",
+        "genere": "drama",
+        "count_genere": 5,
+        "total_contenido": 10,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "DZ",
+        "genere": "drama",
+        "count_genere": 3,
+        "total_contenido": 3,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "EC",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "EC",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "EC",
+        "genere": "crime",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "EE",
+        "genere": "european",
+        "count_genere": 3,
+        "total_contenido": 5,
+        "porcentaje": 60.0
+    },
+    {
+        "pais": "EG",
+        "genere": "drama",
+        "count_genere": 31,
+        "total_contenido": 46,
+        "porcentaje": 67.3913
+    },
+    {
+        "pais": "ES",
+        "genere": "drama",
+        "count_genere": 201,
+        "total_contenido": 371,
+        "porcentaje": 54.1779
+    },
+    {
+        "pais": "ET",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "ET",
+        "genere": "fantasy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "ET",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "ET",
+        "genere": "scifi",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "ET",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "FI",
+        "genere": "european",
+        "count_genere": 16,
+        "total_contenido": 23,
+        "porcentaje": 69.5652
+    },
+    {
+        "pais": "FJ",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "FJ",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "FJ",
+        "genere": "sport",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "FJ",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "FO",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "FR",
+        "genere": "drama",
+        "count_genere": 463,
+        "total_contenido": 725,
+        "porcentaje": 63.8621
+    },
+    {
+        "pais": "GB",
+        "genere": "drama",
+        "count_genere": 965,
+        "total_contenido": 1843,
+        "porcentaje": 52.3603
+    },
+    {
+        "pais": "GE",
+        "genere": "drama",
+        "count_genere": 4,
+        "total_contenido": 4,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "GH",
+        "genere": "drama",
+        "count_genere": 3,
+        "total_contenido": 4,
+        "porcentaje": 75.0
+    },
+    {
+        "pais": "GL",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "GL",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "GL",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "GQ",
+        "genere": "family",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "GQ",
+        "genere": "romance",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "GQ",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "GR",
+        "genere": "drama",
+        "count_genere": 14,
+        "total_contenido": 15,
+        "porcentaje": 93.3333
+    },
+    {
+        "pais": "GT",
+        "genere": "documentation",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "HK",
+        "genere": "action",
+        "count_genere": 106,
+        "total_contenido": 155,
+        "porcentaje": 68.3871
+    },
+    {
+        "pais": "HN",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "HR",
+        "genere": "drama",
+        "count_genere": 4,
+        "total_contenido": 5,
+        "porcentaje": 80.0
+    },
+    {
+        "pais": "HU",
+        "genere": "drama",
+        "count_genere": 16,
+        "total_contenido": 21,
+        "porcentaje": 76.1905
+    },
+    {
+        "pais": "ID",
+        "genere": "drama",
+        "count_genere": 51,
+        "total_contenido": 67,
+        "porcentaje": 76.1194
+    },
+    {
+        "pais": "IE",
+        "genere": "drama",
+        "count_genere": 60,
+        "total_contenido": 87,
+        "porcentaje": 68.9655
+    },
+    {
+        "pais": "IL",
+        "genere": "drama",
+        "count_genere": 42,
+        "total_contenido": 60,
+        "porcentaje": 70.0
+    },
+    {
+        "pais": "IN",
+        "genere": "drama",
+        "count_genere": 1096,
+        "total_contenido": 1538,
+        "porcentaje": 71.2614
+    },
+    {
+        "pais": "IO",
+        "genere": "reality",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "IQ",
+        "genere": "war",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "IQ",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "IQ",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "IQ",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "IQ",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "IR",
+        "genere": "drama",
+        "count_genere": 15,
+        "total_contenido": 18,
+        "porcentaje": 83.3333
+    },
+    {
+        "pais": "IS",
+        "genere": "drama",
+        "count_genere": 14,
+        "total_contenido": 18,
+        "porcentaje": 77.7778
+    },
+    {
+        "pais": "IT",
+        "genere": "european",
+        "count_genere": 178,
+        "total_contenido": 293,
+        "porcentaje": 60.7509
+    },
+    {
+        "pais": "JM",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "JO",
+        "genere": "drama",
+        "count_genere": 7,
+        "total_contenido": 7,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "JP",
+        "genere": "animation",
+        "count_genere": 580,
+        "total_contenido": 914,
+        "porcentaje": 63.4573
+    },
+    {
+        "pais": "KE",
+        "genere": "drama",
+        "count_genere": 3,
+        "total_contenido": 6,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "KG",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KG",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KH",
+        "genere": "war",
+        "count_genere": 2,
+        "total_contenido": 5,
+        "porcentaje": 40.0
+    },
+    {
+        "pais": "KH",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 5,
+        "porcentaje": 40.0
+    },
+    {
+        "pais": "KH",
+        "genere": "history",
+        "count_genere": 2,
+        "total_contenido": 5,
+        "porcentaje": 40.0
+    },
+    {
+        "pais": "KH",
+        "genere": "action",
+        "count_genere": 2,
+        "total_contenido": 5,
+        "porcentaje": 40.0
+    },
+    {
+        "pais": "KI",
+        "genere": "history",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KI",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KN",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KN",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KN",
+        "genere": "scifi",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KN",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "KR",
+        "genere": "drama",
+        "count_genere": 782,
+        "total_contenido": 1022,
+        "porcentaje": 76.5166
+    },
+    {
+        "pais": "KW",
+        "genere": "drama",
+        "count_genere": 3,
+        "total_contenido": 5,
+        "porcentaje": 60.0
+    },
+    {
+        "pais": "KZ",
+        "genere": "fantasy",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "LB",
+        "genere": "drama",
+        "count_genere": 25,
+        "total_contenido": 35,
+        "porcentaje": 71.4286
+    },
+    {
+        "pais": "Lebanon",
+        "genere": "war",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "LI",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LI",
+        "genere": "sport",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LI",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LI",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LI",
+        "genere": "horror",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LK",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "LT",
+        "genere": "war",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LT",
+        "genere": "european",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LT",
+        "genere": "history",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LT",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "LU",
+        "genere": "drama",
+        "count_genere": 19,
+        "total_contenido": 27,
+        "porcentaje": 70.3704
+    },
+    {
+        "pais": "LV",
+        "genere": "action",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "LY",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MA",
+        "genere": "drama",
+        "count_genere": 12,
+        "total_contenido": 13,
+        "porcentaje": 92.3077
+    },
+    {
+        "pais": "MC",
+        "genere": "romance",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "MC",
+        "genere": "comedy",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "MK",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MK",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MK",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MN",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 3,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "MO",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MO",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MT",
+        "genere": "drama",
+        "count_genere": 5,
+        "total_contenido": 5,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MU",
+        "genere": "fantasy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MU",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MU",
+        "genere": "scifi",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MU",
+        "genere": "family",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MU",
+        "genere": "animation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MW",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MW",
+        "genere": "history",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "MX",
+        "genere": "drama",
+        "count_genere": 116,
+        "total_contenido": 236,
+        "porcentaje": 49.1525
+    },
+    {
+        "pais": "MY",
+        "genere": "drama",
+        "count_genere": 15,
+        "total_contenido": 28,
+        "porcentaje": 53.5714
+    },
+    {
+        "pais": "NC",
+        "genere": "comedy",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "NC",
+        "genere": "romance",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "NC",
+        "genere": "scifi",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "NG",
+        "genere": "drama",
+        "count_genere": 57,
+        "total_contenido": 79,
+        "porcentaje": 72.1519
+    },
+    {
+        "pais": "NL",
+        "genere": "drama",
+        "count_genere": 51,
+        "total_contenido": 78,
+        "porcentaje": 65.3846
+    },
+    {
+        "pais": "NO",
+        "genere": "drama",
+        "count_genere": 44,
+        "total_contenido": 69,
+        "porcentaje": 63.7681
+    },
+    {
+        "pais": "NP",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "NZ",
+        "genere": "drama",
+        "count_genere": 32,
+        "total_contenido": 67,
+        "porcentaje": 47.7612
+    },
+    {
+        "pais": "PA",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "PA",
+        "genere": "comedy",
+        "count_genere": 2,
+        "total_contenido": 4,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "PE",
+        "genere": "drama",
+        "count_genere": 6,
+        "total_contenido": 12,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "PF",
+        "genere": "sport",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "PF",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "PF",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "PH",
+        "genere": "drama",
+        "count_genere": 66,
+        "total_contenido": 105,
+        "porcentaje": 62.8571
+    },
+    {
+        "pais": "PK",
+        "genere": "drama",
+        "count_genere": 4,
+        "total_contenido": 6,
+        "porcentaje": 66.6667
+    },
+    {
+        "pais": "PL",
+        "genere": "drama",
+        "count_genere": 53,
+        "total_contenido": 74,
+        "porcentaje": 71.6216
+    },
+    {
+        "pais": "PR",
+        "genere": "drama",
+        "count_genere": 9,
+        "total_contenido": 12,
+        "porcentaje": 75.0
+    },
+    {
+        "pais": "PS",
+        "genere": "drama",
+        "count_genere": 11,
+        "total_contenido": 16,
+        "porcentaje": 68.75
+    },
+    {
+        "pais": "PT",
+        "genere": "drama",
+        "count_genere": 11,
+        "total_contenido": 13,
+        "porcentaje": 84.6154
+    },
+    {
+        "pais": "PY",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "PY",
+        "genere": "horror",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "PY",
+        "genere": "crime",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "PY",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "PY",
+        "genere": "romance",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "PY",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "PY",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 3,
+        "porcentaje": 33.3333
+    },
+    {
+        "pais": "QA",
+        "genere": "drama",
+        "count_genere": 13,
+        "total_contenido": 14,
+        "porcentaje": 92.8571
+    },
+    {
+        "pais": "RO",
+        "genere": "drama",
+        "count_genere": 25,
+        "total_contenido": 32,
+        "porcentaje": 78.125
+    },
+    {
+        "pais": "RS",
+        "genere": "drama",
+        "count_genere": 5,
+        "total_contenido": 8,
+        "porcentaje": 62.5
+    },
+    {
+        "pais": "RU",
+        "genere": "drama",
+        "count_genere": 40,
+        "total_contenido": 67,
+        "porcentaje": 59.7015
+    },
+    {
+        "pais": "RW",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "RW",
+        "genere": "history",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "RW",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "RW",
+        "genere": "war",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SA",
+        "genere": "comedy",
+        "count_genere": 7,
+        "total_contenido": 10,
+        "porcentaje": 70.0
+    },
+    {
+        "pais": "SA",
+        "genere": "drama",
+        "count_genere": 7,
+        "total_contenido": 10,
+        "porcentaje": 70.0
+    },
+    {
+        "pais": "SE",
+        "genere": "drama",
+        "count_genere": 77,
+        "total_contenido": 100,
+        "porcentaje": 77.0
+    },
+    {
+        "pais": "SG",
+        "genere": "drama",
+        "count_genere": 17,
+        "total_contenido": 32,
+        "porcentaje": 53.125
+    },
+    {
+        "pais": "SI",
+        "genere": "european",
+        "count_genere": 3,
+        "total_contenido": 4,
+        "porcentaje": 75.0
+    },
+    {
+        "pais": "SK",
+        "genere": "european",
+        "count_genere": 12,
+        "total_contenido": 17,
+        "porcentaje": 70.5882
+    },
+    {
+        "pais": "SN",
+        "genere": "drama",
+        "count_genere": 3,
+        "total_contenido": 5,
+        "porcentaje": 60.0
+    },
+    {
+        "pais": "SO",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SO",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SU",
+        "genere": "drama",
+        "count_genere": 16,
+        "total_contenido": 19,
+        "porcentaje": 84.2105
+    },
+    {
+        "pais": "SUHH",
+        "genere": "family",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SUHH",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SUHH",
+        "genere": "sport",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SUHH",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SV",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SV",
+        "genere": "action",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SY",
+        "genere": "drama",
+        "count_genere": 4,
+        "total_contenido": 4,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SZ",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SZ",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "SZ",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "TC",
+        "genere": "thriller",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "TC",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "TC",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "TC",
+        "genere": "crime",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "TH",
+        "genere": "drama",
+        "count_genere": 45,
+        "total_contenido": 63,
+        "porcentaje": 71.4286
+    },
+    {
+        "pais": "TN",
+        "genere": "drama",
+        "count_genere": 5,
+        "total_contenido": 5,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "TR",
+        "genere": "drama",
+        "count_genere": 58,
+        "total_contenido": 91,
+        "porcentaje": 63.7363
+    },
+    {
+        "pais": "TT",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "TW",
+        "genere": "drama",
+        "count_genere": 98,
+        "total_contenido": 123,
+        "porcentaje": 79.6748
+    },
+    {
+        "pais": "TZ",
+        "genere": "drama",
+        "count_genere": 4,
+        "total_contenido": 4,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "UA",
+        "genere": "thriller",
+        "count_genere": 8,
+        "total_contenido": 16,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "UG",
+        "genere": "documentation",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "United States of America",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "United States of America",
+        "genere": "romance",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "US",
+        "genere": "drama",
+        "count_genere": 5322,
+        "total_contenido": 12352,
+        "porcentaje": 43.0861
+    },
+    {
+        "pais": "UY",
+        "genere": "drama",
+        "count_genere": 8,
+        "total_contenido": 14,
+        "porcentaje": 57.1429
+    },
+    {
+        "pais": "VA",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "VA",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "VE",
+        "genere": "drama",
+        "count_genere": 8,
+        "total_contenido": 10,
+        "porcentaje": 80.0
+    },
+    {
+        "pais": "VN",
+        "genere": "drama",
+        "count_genere": 10,
+        "total_contenido": 14,
+        "porcentaje": 71.4286
+    },
+    {
+        "pais": "XC",
+        "genere": "european",
+        "count_genere": 5,
+        "total_contenido": 5,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "XG",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "XG",
+        "genere": "war",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "XG",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "XK",
+        "genere": "drama",
+        "count_genere": 2,
+        "total_contenido": 2,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "XX",
+        "genere": "comedy",
+        "count_genere": 53,
+        "total_contenido": 140,
+        "porcentaje": 37.8571
+    },
+    {
+        "pais": "YU",
+        "genere": "drama",
+        "count_genere": 6,
+        "total_contenido": 8,
+        "porcentaje": 75.0
+    },
+    {
+        "pais": "ZA",
+        "genere": "drama",
+        "count_genere": 54,
+        "total_contenido": 99,
+        "porcentaje": 54.5455
+    },
+    {
+        "pais": "ZM",
+        "genere": "documentation",
+        "count_genere": 1,
+        "total_contenido": 1,
+        "porcentaje": 100.0
+    },
+    {
+        "pais": "ZW",
+        "genere": "sport",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "ZW",
+        "genere": "european",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "ZW",
+        "genere": "comedy",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "ZW",
+        "genere": "romance",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    },
+    {
+        "pais": "ZW",
+        "genere": "drama",
+        "count_genere": 1,
+        "total_contenido": 2,
+        "porcentaje": 50.0
+    }
+]

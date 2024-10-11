@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="posicions.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map, info, geojson;
+
+        function cargarDatos(url) {
+            return new Promise((resolve, reject) => {
+                fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Respuesta no válida');
+                    }
+                    return response.json();
+                })
+                .then(jsonData => resolve(jsonData))
+                .catch(error => {
+                    console.error('Error al cargar datos');
+                    reject(error);
+                });
+            });
+        }
+
+        function getColor(d) {
+            return d == 'documentation' ? '#800026' :
+                d == 'war'           ? '#BD0026' :
+                d == 'sport'         ? '#E31A1C' :
+                d == 'scifi'         ? '#FC4E2A' :
+                d == 'thriller'      ? '#FD8D3C' :
+                d == 'european'      ? '#00913f' :
+                d == 'romance'       ? '#ee6900' :
+                d == 'drama'         ? '#0d0800' :
+                d == 'music'         ? '#D4EE00' :
+                d == 'reality'       ? '#A3EE00' :
+                d == 'horror'        ? '#6C00EE' :
+                d == 'fantasy'       ? '#0000EE' :
+                d == 'animation'     ? '#00EEEE' :
+                d == 'comedy'        ? '#00EE76' :
+                d == 'western'       ? '#EE7600' :
+                d == 'family'        ? '#EE00D4' :
+                d == 'crime'         ? '#7600EE' :
+                d == 'history'       ? '#EE0076' :
+                d == 'action'        ? '#EE0000' :
+                                        '#FFFFFF'; // Default color if no match
+}
+
+
+        function style(feature) {
+            return {
+                fillColor: getColor(feature.properties.genere),
+                weight: 2,
+                opacity: 1,
+                color: 'white',
+                dashArray: '3',
+                fillOpacity: 0.7,
+            };
+        }
+
+        function highlightFeature(e) {
+            var layer = e.target;
+            layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+
+            info.update(layer.feature.properties);
+        }
+
+        function resetHighlight(e) {
+            geojson.resetStyle(e.target);
+            info.update();
+        }
+
+        function onEachFeature(feature, layer) {
+            layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight
+            });
+        }
+
+        function crearMapa(datosGeoJSON) {
+            map = L.map('map').setView([0, 0], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            info = L.control();
+
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+
+            info.update = function (props) {
+                this._div.innerHTML = '<h4>Gènere predominant per país</h4>' +  (props ?
+                    '<b>' + props.ADMIN + '</b><br />' + 'Gènere:' + props.genere + '</b><br />' + 'Nombre:' + props.count_genere
+                    : 'Pasa el ratón sobre un país');
+            };
+
+            info.addTo(map);
+
+            geojson = L.geoJson(datosGeoJSON, {
+                style: style,
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
+            
+            var legend = L.control({ position: 'bottomleft' });
+
+            legend.onAdd = function(map) {
+                var div = L.DomUtil.create('div', 'info legend-horizontal');
+                var categories = [
+                    'documentation', 'war', 'sport', 'scifi', 'thriller',
+                    'european', 'romance', 'drama', 'music', 'reality',
+                    'horror', 'fantasy', 'animation', 'comedy', 'western',
+                    'family', 'crime', 'history', 'action'
+                ];
+
+                var labels = [];
+                var colors = [
+                    '#800026', '#BD0026', '#E31A1C', '#FC4E2A', '#FD8D3C',
+                    '#00913f', '#ee6900', '#0d0800', '#D4EE00', '#A3EE00',
+                    '#6C00EE', '#0000EE', '#00EEEE', '#00EE76', '#EE7600',
+                    '#EE00D4', '#7600EE', '#EE0076', '#EE0000'
+                ];
+
+                // Loop through our categories and generate a label with a colored square for each category
+                for (var i = 0; i < categories.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + colors[i] + '"></i> ' +
+                        categories[i] + '<br>';
+                }
+
+                return div;
+            };
+
+            legend.addTo(map);
+            
+
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarDatos('updated_countries_genere.geojson')
+                .then(datosGeoJSON => {
+                    crearMapa(datosGeoJSON);
+                })
+                .catch(error => {
+                    console.log('Error al cargar los datos:', error);
+                });
+        });
+    </script>
+</body>
+</html>

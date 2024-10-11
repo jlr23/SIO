@@ -1,0 +1,610 @@
+[
+    {
+        "pais": "AE",
+        "media_score_imbd": 5.728571483067104
+    },
+    {
+        "pais": "AF",
+        "media_score_imbd": 7.255555470784505
+    },
+    {
+        "pais": "AL",
+        "media_score_imbd": 6.8999998569488525
+    },
+    {
+        "pais": "AM",
+        "media_score_imbd": 6.5
+    },
+    {
+        "pais": "AN",
+        "media_score_imbd": 4.800000190734863
+    },
+    {
+        "pais": "AO",
+        "media_score_imbd": 4.7499998807907104
+    },
+    {
+        "pais": "AQ",
+        "media_score_imbd": 7.099999904632568
+    },
+    {
+        "pais": "AR",
+        "media_score_imbd": 6.522807008341739
+    },
+    {
+        "pais": "AT",
+        "media_score_imbd": 6.475757598876953
+    },
+    {
+        "pais": "AU",
+        "media_score_imbd": 6.496428590445292
+    },
+    {
+        "pais": "BA",
+        "media_score_imbd": 7.333333333333333
+    },
+    {
+        "pais": "BD",
+        "media_score_imbd": 6.219999980926514
+    },
+    {
+        "pais": "BE",
+        "media_score_imbd": 6.460431675259158
+    },
+    {
+        "pais": "BF",
+        "media_score_imbd": 7.0
+    },
+    {
+        "pais": "BG",
+        "media_score_imbd": 5.289999985694886
+    },
+    {
+        "pais": "BM",
+        "media_score_imbd": 4.900000095367432
+    },
+    {
+        "pais": "BO",
+        "media_score_imbd": 6.359999942779541
+    },
+    {
+        "pais": "BR",
+        "media_score_imbd": 6.2631250128149984
+    },
+    {
+        "pais": "BS",
+        "media_score_imbd": 8.25
+    },
+    {
+        "pais": "BT",
+        "media_score_imbd": 7.400000095367432
+    },
+    {
+        "pais": "BY",
+        "media_score_imbd": 6.0
+    },
+    {
+        "pais": "CA",
+        "media_score_imbd": 6.058599386598251
+    },
+    {
+        "pais": "CD",
+        "media_score_imbd": 7.849999904632568
+    },
+    {
+        "pais": "CH",
+        "media_score_imbd": 6.619607836592431
+    },
+    {
+        "pais": "CI",
+        "media_score_imbd": 6.833333333333333
+    },
+    {
+        "pais": "CL",
+        "media_score_imbd": 6.058536564431539
+    },
+    {
+        "pais": "CM",
+        "media_score_imbd": 5.5333333015441895
+    },
+    {
+        "pais": "CN",
+        "media_score_imbd": 6.779123189553836
+    },
+    {
+        "pais": "CO",
+        "media_score_imbd": 6.127419352531433
+    },
+    {
+        "pais": "CR",
+        "media_score_imbd": 5.5
+    },
+    {
+        "pais": "CS",
+        "media_score_imbd": 5.900000095367432
+    },
+    {
+        "pais": "CU",
+        "media_score_imbd": 7.842857224600656
+    },
+    {
+        "pais": "CY",
+        "media_score_imbd": 5.774999976158142
+    },
+    {
+        "pais": "CZ",
+        "media_score_imbd": 6.116666674613953
+    },
+    {
+        "pais": "DE",
+        "media_score_imbd": 6.4322851179030955
+    },
+    {
+        "pais": "DK",
+        "media_score_imbd": 6.699999988780302
+    },
+    {
+        "pais": "DO",
+        "media_score_imbd": 6.570000004768372
+    },
+    {
+        "pais": "DZ",
+        "media_score_imbd": 7.833333333333333
+    },
+    {
+        "pais": "EC",
+        "media_score_imbd": 7.400000095367432
+    },
+    {
+        "pais": "EE",
+        "media_score_imbd": 6.160000038146973
+    },
+    {
+        "pais": "EG",
+        "media_score_imbd": 6.402173933775528
+    },
+    {
+        "pais": "ES",
+        "media_score_imbd": 6.33261456643796
+    },
+    {
+        "pais": "ET",
+        "media_score_imbd": 5.599999904632568
+    },
+    {
+        "pais": "FI",
+        "media_score_imbd": 6.182608708091404
+    },
+    {
+        "pais": "FJ",
+        "media_score_imbd": 5.300000071525574
+    },
+    {
+        "pais": "FO",
+        "media_score_imbd": 5.0
+    },
+    {
+        "pais": "FR",
+        "media_score_imbd": 6.604275873118434
+    },
+    {
+        "pais": "GB",
+        "media_score_imbd": 6.65225176997503
+    },
+    {
+        "pais": "GE",
+        "media_score_imbd": 7.574999928474426
+    },
+    {
+        "pais": "GH",
+        "media_score_imbd": 6.1249998807907104
+    },
+    {
+        "pais": "GL",
+        "media_score_imbd": 6.300000190734863
+    },
+    {
+        "pais": "GQ",
+        "media_score_imbd": 5.599999904632568
+    },
+    {
+        "pais": "GR",
+        "media_score_imbd": 6.620000012715658
+    },
+    {
+        "pais": "GT",
+        "media_score_imbd": 7.200000047683716
+    },
+    {
+        "pais": "HK",
+        "media_score_imbd": 6.158064502285373
+    },
+    {
+        "pais": "HN",
+        "media_score_imbd": 8.5
+    },
+    {
+        "pais": "HR",
+        "media_score_imbd": 6.660000038146973
+    },
+    {
+        "pais": "HU",
+        "media_score_imbd": 6.566666693914504
+    },
+    {
+        "pais": "ID",
+        "media_score_imbd": 6.202985076761958
+    },
+    {
+        "pais": "IE",
+        "media_score_imbd": 6.412643690218871
+    },
+    {
+        "pais": "IL",
+        "media_score_imbd": 6.719999984900157
+    },
+    {
+        "pais": "IN",
+        "media_score_imbd": 6.3727568330628355
+    },
+    {
+        "pais": "IO",
+        "media_score_imbd": 5.899999936421712
+    },
+    {
+        "pais": "IQ",
+        "media_score_imbd": 5.550000190734863
+    },
+    {
+        "pais": "IR",
+        "media_score_imbd": 6.499999986754523
+    },
+    {
+        "pais": "IS",
+        "media_score_imbd": 6.88333339161343
+    },
+    {
+        "pais": "IT",
+        "media_score_imbd": 6.282935150247385
+    },
+    {
+        "pais": "JM",
+        "media_score_imbd": 5.799999952316284
+    },
+    {
+        "pais": "JO",
+        "media_score_imbd": 6.27142858505249
+    },
+    {
+        "pais": "JP",
+        "media_score_imbd": 6.968599570397475
+    },
+    {
+        "pais": "KE",
+        "media_score_imbd": 6.549999952316284
+    },
+    {
+        "pais": "KG",
+        "media_score_imbd": 7.099999904632568
+    },
+    {
+        "pais": "KH",
+        "media_score_imbd": 6.5
+    },
+    {
+        "pais": "KI",
+        "media_score_imbd": 7.199999809265137
+    },
+    {
+        "pais": "KN",
+        "media_score_imbd": 5.400000095367432
+    },
+    {
+        "pais": "KR",
+        "media_score_imbd": 7.168493159013252
+    },
+    {
+        "pais": "KW",
+        "media_score_imbd": 5.599999904632568
+    },
+    {
+        "pais": "KZ",
+        "media_score_imbd": 5.266666730244954
+    },
+    {
+        "pais": "LB",
+        "media_score_imbd": 6.69142861366272
+    },
+    {
+        "pais": "Lebanon",
+        "media_score_imbd": 6.400000095367432
+    },
+    {
+        "pais": "LI",
+        "media_score_imbd": 5.949999809265137
+    },
+    {
+        "pais": "LK",
+        "media_score_imbd": 6.400000095367432
+    },
+    {
+        "pais": "LT",
+        "media_score_imbd": 5.2499998807907104
+    },
+    {
+        "pais": "LU",
+        "media_score_imbd": 6.477777745988634
+    },
+    {
+        "pais": "LV",
+        "media_score_imbd": 5.849999904632568
+    },
+    {
+        "pais": "LY",
+        "media_score_imbd": 6.300000190734863
+    },
+    {
+        "pais": "MA",
+        "media_score_imbd": 6.184615336931669
+    },
+    {
+        "pais": "MC",
+        "media_score_imbd": 6.166666666666667
+    },
+    {
+        "pais": "MK",
+        "media_score_imbd": 8.0
+    },
+    {
+        "pais": "MN",
+        "media_score_imbd": 6.099999904632568
+    },
+    {
+        "pais": "MO",
+        "media_score_imbd": 5.0
+    },
+    {
+        "pais": "MT",
+        "media_score_imbd": 6.580000114440918
+    },
+    {
+        "pais": "MU",
+        "media_score_imbd": 5.400000095367432
+    },
+    {
+        "pais": "MW",
+        "media_score_imbd": 7.599999904632568
+    },
+    {
+        "pais": "MX",
+        "media_score_imbd": 6.29279659713729
+    },
+    {
+        "pais": "MY",
+        "media_score_imbd": 6.092857122421265
+    },
+    {
+        "pais": "NC",
+        "media_score_imbd": 7.849999904632568
+    },
+    {
+        "pais": "NG",
+        "media_score_imbd": 5.646835420705095
+    },
+    {
+        "pais": "NL",
+        "media_score_imbd": 6.344871811377696
+    },
+    {
+        "pais": "NO",
+        "media_score_imbd": 6.426086947537851
+    },
+    {
+        "pais": "NP",
+        "media_score_imbd": 7.5
+    },
+    {
+        "pais": "NZ",
+        "media_score_imbd": 6.537313454186738
+    },
+    {
+        "pais": "PA",
+        "media_score_imbd": 6.275000095367432
+    },
+    {
+        "pais": "PE",
+        "media_score_imbd": 6.03333334128062
+    },
+    {
+        "pais": "PF",
+        "media_score_imbd": 7.800000190734863
+    },
+    {
+        "pais": "PH",
+        "media_score_imbd": 6.163809533346267
+    },
+    {
+        "pais": "PK",
+        "media_score_imbd": 7.100000063578288
+    },
+    {
+        "pais": "PL",
+        "media_score_imbd": 6.120270294112128
+    },
+    {
+        "pais": "PR",
+        "media_score_imbd": 5.708333333333333
+    },
+    {
+        "pais": "PS",
+        "media_score_imbd": 6.8125
+    },
+    {
+        "pais": "PT",
+        "media_score_imbd": 6.838461582477276
+    },
+    {
+        "pais": "PY",
+        "media_score_imbd": 5.5333333015441895
+    },
+    {
+        "pais": "QA",
+        "media_score_imbd": 6.757142884390695
+    },
+    {
+        "pais": "RO",
+        "media_score_imbd": 6.5
+    },
+    {
+        "pais": "RS",
+        "media_score_imbd": 6.562499940395355
+    },
+    {
+        "pais": "RU",
+        "media_score_imbd": 6.03582088982881
+    },
+    {
+        "pais": "RW",
+        "media_score_imbd": 7.800000190734863
+    },
+    {
+        "pais": "SA",
+        "media_score_imbd": 6.0500000476837155
+    },
+    {
+        "pais": "SE",
+        "media_score_imbd": 6.700000009536743
+    },
+    {
+        "pais": "SG",
+        "media_score_imbd": 6.274999976158142
+    },
+    {
+        "pais": "SI",
+        "media_score_imbd": 7.125
+    },
+    {
+        "pais": "SK",
+        "media_score_imbd": 5.658823532216689
+    },
+    {
+        "pais": "SN",
+        "media_score_imbd": 7.1800000190734865
+    },
+    {
+        "pais": "SO",
+        "media_score_imbd": 6.5
+    },
+    {
+        "pais": "SU",
+        "media_score_imbd": 7.48947370679755
+    },
+    {
+        "pais": "SUHH",
+        "media_score_imbd": 6.0
+    },
+    {
+        "pais": "SV",
+        "media_score_imbd": 4.5
+    },
+    {
+        "pais": "SY",
+        "media_score_imbd": 6.7500001192092896
+    },
+    {
+        "pais": "SZ",
+        "media_score_imbd": 6.800000190734863
+    },
+    {
+        "pais": "TC",
+        "media_score_imbd": 3.5
+    },
+    {
+        "pais": "TH",
+        "media_score_imbd": 6.188888879049392
+    },
+    {
+        "pais": "TN",
+        "media_score_imbd": 6.219999980926514
+    },
+    {
+        "pais": "TR",
+        "media_score_imbd": 6.257142834610992
+    },
+    {
+        "pais": "TT",
+        "media_score_imbd": 7.1000001430511475
+    },
+    {
+        "pais": "TW",
+        "media_score_imbd": 6.842276423927245
+    },
+    {
+        "pais": "TZ",
+        "media_score_imbd": 7.074999928474426
+    },
+    {
+        "pais": "UA",
+        "media_score_imbd": 6.156249985098839
+    },
+    {
+        "pais": "UG",
+        "media_score_imbd": 7.0
+    },
+    {
+        "pais": "United States of America",
+        "media_score_imbd": 5.650000095367432
+    },
+    {
+        "pais": "US",
+        "media_score_imbd": 6.298121764387337
+    },
+    {
+        "pais": "UY",
+        "media_score_imbd": 6.607142857142857
+    },
+    {
+        "pais": "VA",
+        "media_score_imbd": 6.400000095367432
+    },
+    {
+        "pais": "VE",
+        "media_score_imbd": 6.110000038146973
+    },
+    {
+        "pais": "VN",
+        "media_score_imbd": 5.728571397917611
+    },
+    {
+        "pais": "XC",
+        "media_score_imbd": 7.199999904632568
+    },
+    {
+        "pais": "XG",
+        "media_score_imbd": 7.800000190734863
+    },
+    {
+        "pais": "XK",
+        "media_score_imbd": 7.5
+    },
+    {
+        "pais": "XX",
+        "media_score_imbd": 6.097142859867641
+    },
+    {
+        "pais": "YU",
+        "media_score_imbd": 5.912500023841858
+    },
+    {
+        "pais": "ZA",
+        "media_score_imbd": 6.177777796080618
+    },
+    {
+        "pais": "ZM",
+        "media_score_imbd": 7.800000190734863
+    },
+    {
+        "pais": "ZW",
+        "media_score_imbd": 6.549999952316284
+    }
+]

@@ -1,0 +1,606 @@
+[
+    {
+        "regio": "US",
+        "contingut": 12352
+    },
+    {
+        "regio": "GB",
+        "contingut": 1843
+    },
+    {
+        "regio": "IN",
+        "contingut": 1538
+    },
+    {
+        "regio": "KR",
+        "contingut": 1022
+    },
+    {
+        "regio": "CA",
+        "contingut": 971
+    },
+    {
+        "regio": "JP",
+        "contingut": 914
+    },
+    {
+        "regio": "FR",
+        "contingut": 725
+    },
+    {
+        "regio": "CN",
+        "contingut": 479
+    },
+    {
+        "regio": "DE",
+        "contingut": 477
+    },
+    {
+        "regio": "ES",
+        "contingut": 371
+    },
+    {
+        "regio": "AU",
+        "contingut": 336
+    },
+    {
+        "regio": "IT",
+        "contingut": 293
+    },
+    {
+        "regio": "MX",
+        "contingut": 236
+    },
+    {
+        "regio": "BR",
+        "contingut": 160
+    },
+    {
+        "regio": "HK",
+        "contingut": 155
+    },
+    {
+        "regio": "XX",
+        "contingut": 140
+    },
+    {
+        "regio": "BE",
+        "contingut": 139
+    },
+    {
+        "regio": "TW",
+        "contingut": 123
+    },
+    {
+        "regio": "AR",
+        "contingut": 114
+    },
+    {
+        "regio": "PH",
+        "contingut": 105
+    },
+    {
+        "regio": "SE",
+        "contingut": 100
+    },
+    {
+        "regio": "ZA",
+        "contingut": 99
+    },
+    {
+        "regio": "TR",
+        "contingut": 91
+    },
+    {
+        "regio": "IE",
+        "contingut": 87
+    },
+    {
+        "regio": "DK",
+        "contingut": 85
+    },
+    {
+        "regio": "NG",
+        "contingut": 79
+    },
+    {
+        "regio": "NL",
+        "contingut": 78
+    },
+    {
+        "regio": "PL",
+        "contingut": 74
+    },
+    {
+        "regio": "NO",
+        "contingut": 69
+    },
+    {
+        "regio": "ID",
+        "contingut": 67
+    },
+    {
+        "regio": "RU",
+        "contingut": 67
+    },
+    {
+        "regio": "NZ",
+        "contingut": 67
+    },
+    {
+        "regio": "TH",
+        "contingut": 63
+    },
+    {
+        "regio": "CO",
+        "contingut": 62
+    },
+    {
+        "regio": "IL",
+        "contingut": 60
+    },
+    {
+        "regio": "CH",
+        "contingut": 51
+    },
+    {
+        "regio": "CZ",
+        "contingut": 48
+    },
+    {
+        "regio": "EG",
+        "contingut": 46
+    },
+    {
+        "regio": "CL",
+        "contingut": 41
+    },
+    {
+        "regio": "LB",
+        "contingut": 35
+    },
+    {
+        "regio": "AT",
+        "contingut": 33
+    },
+    {
+        "regio": "RO",
+        "contingut": 32
+    },
+    {
+        "regio": "SG",
+        "contingut": 32
+    },
+    {
+        "regio": "MY",
+        "contingut": 28
+    },
+    {
+        "regio": "AE",
+        "contingut": 28
+    },
+    {
+        "regio": "LU",
+        "contingut": 27
+    },
+    {
+        "regio": "FI",
+        "contingut": 23
+    },
+    {
+        "regio": "HU",
+        "contingut": 21
+    },
+    {
+        "regio": "SU",
+        "contingut": 19
+    },
+    {
+        "regio": "IR",
+        "contingut": 18
+    },
+    {
+        "regio": "IS",
+        "contingut": 18
+    },
+    {
+        "regio": "SK",
+        "contingut": 17
+    },
+    {
+        "regio": "PS",
+        "contingut": 16
+    },
+    {
+        "regio": "UA",
+        "contingut": 16
+    },
+    {
+        "regio": "GR",
+        "contingut": 15
+    },
+    {
+        "regio": "UY",
+        "contingut": 14
+    },
+    {
+        "regio": "QA",
+        "contingut": 14
+    },
+    {
+        "regio": "VN",
+        "contingut": 14
+    },
+    {
+        "regio": "PT",
+        "contingut": 13
+    },
+    {
+        "regio": "MA",
+        "contingut": 13
+    },
+    {
+        "regio": "PE",
+        "contingut": 12
+    },
+    {
+        "regio": "PR",
+        "contingut": 12
+    },
+    {
+        "regio": "BG",
+        "contingut": 10
+    },
+    {
+        "regio": "DO",
+        "contingut": 10
+    },
+    {
+        "regio": "SA",
+        "contingut": 10
+    },
+    {
+        "regio": "VE",
+        "contingut": 10
+    },
+    {
+        "regio": "AF",
+        "contingut": 9
+    },
+    {
+        "regio": "RS",
+        "contingut": 8
+    },
+    {
+        "regio": "YU",
+        "contingut": 8
+    },
+    {
+        "regio": "CU",
+        "contingut": 7
+    },
+    {
+        "regio": "JO",
+        "contingut": 7
+    },
+    {
+        "regio": "KE",
+        "contingut": 6
+    },
+    {
+        "regio": "PK",
+        "contingut": 6
+    },
+    {
+        "regio": "TN",
+        "contingut": 5
+    },
+    {
+        "regio": "KW",
+        "contingut": 5
+    },
+    {
+        "regio": "MT",
+        "contingut": 5
+    },
+    {
+        "regio": "KH",
+        "contingut": 5
+    },
+    {
+        "regio": "BO",
+        "contingut": 5
+    },
+    {
+        "regio": "EE",
+        "contingut": 5
+    },
+    {
+        "regio": "SN",
+        "contingut": 5
+    },
+    {
+        "regio": "XC",
+        "contingut": 5
+    },
+    {
+        "regio": "BD",
+        "contingut": 5
+    },
+    {
+        "regio": "HR",
+        "contingut": 5
+    },
+    {
+        "regio": "SY",
+        "contingut": 4
+    },
+    {
+        "regio": "CY",
+        "contingut": 4
+    },
+    {
+        "regio": "GE",
+        "contingut": 4
+    },
+    {
+        "regio": "SI",
+        "contingut": 4
+    },
+    {
+        "regio": "TZ",
+        "contingut": 4
+    },
+    {
+        "regio": "GH",
+        "contingut": 4
+    },
+    {
+        "regio": "LT",
+        "contingut": 4
+    },
+    {
+        "regio": "PA",
+        "contingut": 4
+    },
+    {
+        "regio": "AL",
+        "contingut": 4
+    },
+    {
+        "regio": "BA",
+        "contingut": 3
+    },
+    {
+        "regio": "DZ",
+        "contingut": 3
+    },
+    {
+        "regio": "CI",
+        "contingut": 3
+    },
+    {
+        "regio": "CM",
+        "contingut": 3
+    },
+    {
+        "regio": "PY",
+        "contingut": 3
+    },
+    {
+        "regio": "MC",
+        "contingut": 3
+    },
+    {
+        "regio": "KZ",
+        "contingut": 3
+    },
+    {
+        "regio": "IO",
+        "contingut": 3
+    },
+    {
+        "regio": "MN",
+        "contingut": 3
+    },
+    {
+        "regio": "UG",
+        "contingut": 2
+    },
+    {
+        "regio": "BS",
+        "contingut": 2
+    },
+    {
+        "regio": "XK",
+        "contingut": 2
+    },
+    {
+        "regio": "IQ",
+        "contingut": 2
+    },
+    {
+        "regio": "JM",
+        "contingut": 2
+    },
+    {
+        "regio": "BY",
+        "contingut": 2
+    },
+    {
+        "regio": "NC",
+        "contingut": 2
+    },
+    {
+        "regio": "ZW",
+        "contingut": 2
+    },
+    {
+        "regio": "AO",
+        "contingut": 2
+    },
+    {
+        "regio": "LV",
+        "contingut": 2
+    },
+    {
+        "regio": "CR",
+        "contingut": 2
+    },
+    {
+        "regio": "TT",
+        "contingut": 2
+    },
+    {
+        "regio": "LI",
+        "contingut": 2
+    },
+    {
+        "regio": "GT",
+        "contingut": 2
+    },
+    {
+        "regio": "FJ",
+        "contingut": 2
+    },
+    {
+        "regio": "CD",
+        "contingut": 2
+    },
+    {
+        "regio": "MK",
+        "contingut": 1
+    },
+    {
+        "regio": "CS",
+        "contingut": 1
+    },
+    {
+        "regio": "TC",
+        "contingut": 1
+    },
+    {
+        "regio": "SV",
+        "contingut": 1
+    },
+    {
+        "regio": "SO",
+        "contingut": 1
+    },
+    {
+        "regio": "KN",
+        "contingut": 1
+    },
+    {
+        "regio": "GQ",
+        "contingut": 1
+    },
+    {
+        "regio": "EC",
+        "contingut": 1
+    },
+    {
+        "regio": "ET",
+        "contingut": 1
+    },
+    {
+        "regio": "Lebanon",
+        "contingut": 1
+    },
+    {
+        "regio": "FO",
+        "contingut": 1
+    },
+    {
+        "regio": "HN",
+        "contingut": 1
+    },
+    {
+        "regio": "MU",
+        "contingut": 1
+    },
+    {
+        "regio": "BT",
+        "contingut": 1
+    },
+    {
+        "regio": "MW",
+        "contingut": 1
+    },
+    {
+        "regio": "ZM",
+        "contingut": 1
+    },
+    {
+        "regio": "XG",
+        "contingut": 1
+    },
+    {
+        "regio": "AM",
+        "contingut": 1
+    },
+    {
+        "regio": "AQ",
+        "contingut": 1
+    },
+    {
+        "regio": "SZ",
+        "contingut": 1
+    },
+    {
+        "regio": "BM",
+        "contingut": 1
+    },
+    {
+        "regio": "AN",
+        "contingut": 1
+    },
+    {
+        "regio": "SUHH",
+        "contingut": 1
+    },
+    {
+        "regio": "KG",
+        "contingut": 1
+    },
+    {
+        "regio": "NP",
+        "contingut": 1
+    },
+    {
+        "regio": "BF",
+        "contingut": 1
+    },
+    {
+        "regio": "GL",
+        "contingut": 1
+    },
+    {
+        "regio": "VA",
+        "contingut": 1
+    },
+    {
+        "regio": "KI",
+        "contingut": 1
+    },
+    {
+        "regio": "PF",
+        "contingut": 1
+    },
+    {
+        "regio": "MO",
+        "contingut": 1
+    },
+    {
+        "regio": "RW",
+        "contingut": 1
+    },
+    {
+        "regio": "LY",
+        "contingut": 1
+    },
+    {
+        "regio": "LK",
+        "contingut": 1
+    }
+]
